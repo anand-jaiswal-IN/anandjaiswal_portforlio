@@ -343,7 +343,7 @@ export default function ContactPage() {
                 key={index}
                 delay={index * 0.1}
                 intensity="low"
-                style="neomorphism"
+                style="glass"
                 className="p-6"
               >
                 <h3 className="font-semibold text-foreground-primary mb-2">

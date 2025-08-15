@@ -3,12 +3,40 @@
 
 @theme {
   --color-primary: #ed6028;
-  --color-primary-hover: #cc4611;
   --color-accent: #f17f51;
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
 }
+
+/* Ensure primary color utilities work properly */
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--color-primary) !important;
+}
+
+.hover\:text-white:hover {
+  color: white !important;
+}
+
+.hover\:shadow-primary\/25:hover {
+  box-shadow: 0 10px 25px -3px rgba(237, 96, 40, 0.25), 0 4px 6px -2px rgba(237, 96, 40, 0.05) !important;
+}
+
+
+
+
 
 :root {
   --background-primary: #fffcf2;
@@ -31,7 +59,7 @@
   --foreground-secondary: #ccc5b9;
   --foreground-muted: #928c84;
   --border-color: #6a655e;
-  --shadow-color: rgba(255, 252, 242, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
   --glass-bg: rgba(20, 21, 20, 0.8);
   --glass-border: rgba(106, 101, 94, 0.3);
 }
@@ -84,14 +112,26 @@ body {
   background: var(--background-primary);
   box-shadow:
     8px 8px 16px var(--shadow-color),
-    -8px -8px 16px rgba(255, 255, 255, 0.1);
+    -8px -8px 16px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .neomorphism {
+  box-shadow:
+    8px 8px 16px var(--shadow-color),
+    -8px -8px 16px rgba(255, 255, 255, 0.02);
 }
 
 .neomorphism-inset {
   background: var(--background-primary);
   box-shadow:
     inset 8px 8px 16px var(--shadow-color),
-    inset -8px -8px 16px rgba(255, 255, 255, 0.1);
+    inset -8px -8px 16px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .neomorphism-inset {
+  box-shadow:
+    inset 8px 8px 16px var(--shadow-color),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.02);
 }
 
 /* Animation utilities */
@@ -253,30 +293,3 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */

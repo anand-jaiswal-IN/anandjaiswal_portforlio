@@ -39,9 +39,9 @@ export function TechIcon({ name, icon, delay = 0, size = "md" }: TechIconProps) 
       className="group cursor-pointer"
     >
       <div className={cn(
-        "relative rounded-2xl neomorphism flex items-center justify-center",
+        "relative rounded-2xl glass flex items-center justify-center",
         "group-hover:shadow-2xl transition-all duration-300",
-        "bg-gradient-to-br from-background-primary to-background-secondary",
+        "bg-gradient-to-br from-primary/5 to-accent/5",
         sizeClasses[size]
       )}>
         {/* Icon or Text */}

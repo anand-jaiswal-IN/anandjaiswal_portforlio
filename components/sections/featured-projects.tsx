@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { HiExternalLink, HiArrowRight } from "react-icons/hi"
 import { FaGithub } from "react-icons/fa"
@@ -162,14 +163,16 @@ export function FeaturedProjects() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 glass rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2 mx-auto group"
-          >
-            View All Projects
-            <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
+          <Link href="/projects">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-8 py-4 glass rounded-full font-semibold hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 group cursor-pointer"
+            >
+              View All Projects
+              <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </motion.div>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,10 +1,19 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { HiCode, HiDatabase, HiDeviceMobile, HiColorSwatch, HiGlobeAlt, HiLightningBolt, HiShieldCheck } from "react-icons/hi"
-import { FaBrain } from "react-icons/fa"
+import { HiCode, HiDatabase, HiDeviceMobile, HiColorSwatch, HiGlobeAlt, HiLightningBolt, HiShieldCheck, HiCube, HiCloud, HiTerminal } from "react-icons/hi"
+import {
+  FaBrain, FaReact, FaVuejs, FaNodeJs, FaPython, FaDocker, FaAws, FaGitAlt,
+  FaFigma, FaJs, FaHtml5, FaCss3Alt, FaSass, FaSwift, FaAndroid
+} from "react-icons/fa"
+import {
+  SiTypescript, SiNextdotjs, SiTailwindcss, SiExpress, SiGraphql, SiPostgresql,
+  SiMongodb, SiRedis, SiFirebase, SiPrisma, SiVercel, SiOpenai, SiTensorflow,
+  SiPytorch, SiGithubactions, SiEslint, SiPrettier, SiWebpack, SiVite,
+  SiFramer, SiDjango, SiFastapi, SiSocketdotio, SiMysql, SiSqlite,
+  SiSupabase, SiDart, SiKotlin, SiHuggingface
+} from "react-icons/si"
 import { SkillBar } from "@/components/ui/skill-bar"
-import { TechIcon } from "@/components/ui/tech-icon"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
 
@@ -59,10 +68,101 @@ const skillCategories = [
   }
 ]
 
-const technologies = [
-  "React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", 
-  "MongoDB", "GraphQL", "Docker", "AWS", "Vercel", "Firebase",
-  "Tailwind", "Framer Motion", "Prisma", "Express", "FastAPI", "Redis"
+// TODO: This will be fetched from backend API
+// Example API structure: GET /api/technologies
+const technologyCategories = [
+  {
+    title: "Frontend",
+    icon: HiCode,
+    color: "text-blue-500",
+    technologies: [
+      { name: "React", icon: FaReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Vue.js", icon: FaVuejs },
+      { name: "JavaScript", icon: FaJs },
+      { name: "HTML5", icon: FaHtml5 },
+      { name: "CSS3", icon: FaCss3Alt },
+      { name: "SASS", icon: FaSass },
+      { name: "Framer Motion", icon: SiFramer }
+    ]
+  },
+  {
+    title: "Backend",
+    icon: HiDatabase,
+    color: "text-green-500",
+    technologies: [
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "Python", icon: FaPython },
+      { name: "Express", icon: SiExpress },
+      { name: "GraphQL", icon: SiGraphql },
+      { name: "Django", icon: SiDjango },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Socket.io", icon: SiSocketdotio },
+      { name: "REST APIs", icon: HiGlobeAlt }
+    ]
+  },
+  {
+    title: "Tools & DevOps",
+    icon: HiLightningBolt,
+    color: "text-purple-500",
+    technologies: [
+      { name: "Docker", icon: FaDocker },
+      { name: "AWS", icon: FaAws },
+      { name: "Git", icon: FaGitAlt },
+      { name: "GitHub Actions", icon: SiGithubactions },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Webpack", icon: SiWebpack },
+      { name: "Vite", icon: SiVite },
+      { name: "ESLint", icon: SiEslint },
+      { name: "Prettier", icon: SiPrettier },
+      { name: "Figma", icon: FaFigma }
+    ]
+  },
+  {
+    title: "Databases",
+    icon: HiDatabase,
+    color: "text-red-500",
+    technologies: [
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Redis", icon: SiRedis },
+      { name: "Firebase", icon: SiFirebase },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "MySQL", icon: SiMysql },
+      { name: "SQLite", icon: SiSqlite },
+      { name: "Supabase", icon: SiSupabase }
+    ]
+  },
+  {
+    title: "AI/ML",
+    icon: FaBrain,
+    color: "text-pink-500",
+    technologies: [
+      { name: "OpenAI API", icon: SiOpenai },
+      { name: "TensorFlow", icon: SiTensorflow },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "Hugging Face", icon: SiHuggingface },
+      { name: "LangChain", icon: HiLightningBolt },
+      { name: "Vector DBs", icon: HiDatabase },
+      { name: "RAG", icon: FaBrain },
+      { name: "Prompt Engineering", icon: HiCode }
+    ]
+  },
+  {
+    title: "Mobile",
+    icon: HiDeviceMobile,
+    color: "text-orange-500",
+    technologies: [
+      { name: "React Native", icon: FaReact },
+      { name: "Flutter", icon: SiDart },
+      { name: "Swift", icon: FaSwift },
+      { name: "Kotlin", icon: SiKotlin },
+      { name: "Android", icon: FaAndroid },
+      { name: "iOS", icon: FaSwift }
+    ]
+  }
 ]
 
 const domains = [
@@ -172,15 +272,44 @@ export function SkillsDetailed() {
               Technologies I Work With
             </GradientText>
           </h3>
-          
-          <div className="flex flex-wrap justify-center gap-6">
-            {technologies.map((tech, index) => (
-              <TechIcon
-                key={tech}
-                name={tech}
-                delay={index * 0.05}
-                size="md"
-              />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {technologyCategories.map((category, categoryIndex) => (
+              <FloatingCard
+                key={category.title}
+                delay={categoryIndex * 0.1}
+                intensity="low"
+                style="glass"
+                className="h-full"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`p-2 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20`}>
+                    <category.icon className={`w-5 h-5 ${category.color}`} />
+                  </div>
+                  <h4 className="text-lg font-semibold text-foreground-primary">
+                    {category.title}
+                  </h4>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  {category.technologies.map((tech, techIndex) => (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        delay: categoryIndex * 0.1 + techIndex * 0.05,
+                        duration: 0.3
+                      }}
+                      viewport={{ once: true }}
+                      className="flex items-center gap-2 px-3 py-2 bg-background-secondary/30 text-foreground-primary rounded-full hover:bg-primary/10 hover:text-primary hover:scale-105 transition-all duration-200 cursor-default border border-border/50 hover:border-primary/30"
+                    >
+                      <tech.icon className="w-4 h-4" />
+                      <span className="text-sm font-medium">{tech.name}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </FloatingCard>
             ))}
           </div>
         </motion.div>
@@ -204,7 +333,7 @@ export function SkillsDetailed() {
                 key={domain.title}
                 delay={index * 0.1}
                 intensity="low"
-                style="neomorphism"
+                style="glass"
                 className="text-center group hover:scale-105 transition-transform duration-300"
               >
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:shadow-lg transition-all duration-300`}>

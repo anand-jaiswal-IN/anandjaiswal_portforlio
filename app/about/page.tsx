@@ -272,7 +272,9 @@ export default function AboutPage() {
         </motion.div>
 
         {/* Skills Section */}
-        <SkillsDetailed />
+        <div id="skills">
+          <SkillsDetailed />
+        </div>
       </div>
     </div>
   )

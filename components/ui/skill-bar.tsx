@@ -25,12 +25,15 @@ export function SkillBar({ name, level, delay = 0, color = "primary" }: SkillBar
         <span className="text-foreground-muted text-sm">{level}%</span>
       </div>
       
-      <div className="relative h-3 bg-background-secondary rounded-full overflow-hidden neomorphism-inset">
+      <div className="relative h-3 bg-background-secondary/50 rounded-full overflow-hidden shadow-inner">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: isVisible ? `${level}%` : 0 }}
           transition={{ duration: 1.5, ease: "easeOut", delay: delay }}
-          className={`h-full bg-gradient-to-r from-primary to-accent rounded-full relative`}
+          className="h-full rounded-full relative"
+          style={{
+            background: `linear-gradient(90deg, var(--color-primary), var(--color-accent))`
+          }}
         >
           {/* Shine effect */}
           <motion.div
