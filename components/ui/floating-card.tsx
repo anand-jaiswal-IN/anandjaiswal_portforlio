@@ -35,33 +35,24 @@ export function FloatingCard({
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ 
-        opacity: 1, 
+      animate={{
+        opacity: 1,
         y: 0,
       }}
-      transition={{ 
+      transition={{
         delay,
         duration: 0.6,
         ease: "easeOut"
       }}
       className={cn(
         "relative p-6 rounded-2xl transition-all duration-300",
-        "hover:shadow-2xl hover:scale-105",
+        "hover:shadow-lg hover:scale-[1.02]",
         styleClasses[style],
         className
       )}
-      whileHover={{ 
-        y: -5,
+      whileHover={{
+        y: -2,
         transition: { duration: 0.2 }
-      }}
-      animate={{
-        y: intensityMap[intensity].y,
-        transition: {
-          duration,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut"
-        }
       }}
     >
       {children}

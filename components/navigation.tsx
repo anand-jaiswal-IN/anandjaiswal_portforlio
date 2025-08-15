@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { HiHome, HiUser, HiBriefcase, HiBookOpen, HiMenu, HiX } from "react-icons/hi"
+import { HiHome, HiUser, HiBriefcase, HiBookOpen, HiMenu, HiX, HiMail } from "react-icons/hi"
 import { ThemeToggle } from "./theme-toggle"
 import { cn } from "@/lib/utils"
 
@@ -13,6 +13,7 @@ const navItems = [
   { href: "/about", label: "About", icon: HiUser },
   { href: "/projects", label: "Projects", icon: HiBriefcase },
   { href: "/blog", label: "Blog", icon: HiBookOpen },
+  { href: "/contact", label: "Contact", icon: HiMail },
 ]
 
 export function Navigation() {

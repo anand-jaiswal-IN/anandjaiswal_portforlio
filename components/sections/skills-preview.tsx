@@ -52,7 +52,7 @@ const skills = [
 
 export function SkillsPreview() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-background-secondary/20">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ export function SkillsPreview() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <FloatingCard
               key={skill.title}
               delay={skill.delay}

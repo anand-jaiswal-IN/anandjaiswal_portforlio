@@ -31,8 +31,8 @@ export function HeroSection() {
         </ParallaxSection>
       </div>
 
-      <div className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container mx-auto px-4 py-20 flex items-center justify-center min-h-screen">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -71,23 +71,27 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <MagneticButton
-              className="flex items-center gap-2 justify-center group"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View My Work
-              <HiArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-            </MagneticButton>
+            <div className="w-full sm:w-auto">
+              <MagneticButton
+                className="w-full sm:w-auto min-w-[200px] flex items-center gap-2 justify-center group"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View My Work
+                <HiArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              </MagneticButton>
+            </div>
 
-            <MagneticButton
-              className="bg-transparent glass border-2 border-primary/20 text-foreground-primary hover:bg-primary hover:text-white flex items-center gap-2 justify-center group"
-              strength={0.2}
-            >
-              <HiDownload className="w-4 h-4" />
-              Download Resume
-            </MagneticButton>
+            <div className="w-full sm:w-auto">
+              <MagneticButton
+                className="w-full sm:w-auto min-w-[200px] bg-transparent glass border-2 border-primary/20 text-foreground-primary hover:bg-primary hover:text-white flex items-center gap-2 justify-center group"
+                strength={0.2}
+              >
+                <HiDownload className="w-4 h-4" />
+                Download Resume
+              </MagneticButton>
+            </div>
           </motion.div>
 
           {/* Social Links */}

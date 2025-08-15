@@ -43,7 +43,7 @@ export function MagneticButton({
       className={cn(
         "relative px-8 py-4 bg-primary text-white rounded-full font-semibold",
         "shadow-lg hover:shadow-xl transition-all duration-300",
-        "overflow-hidden group",
+        "overflow-hidden group min-h-[56px] flex items-center justify-center",
         className
       )}
       onMouseMove={handleMouseMove}
@@ -51,8 +51,9 @@ export function MagneticButton({
       onClick={onClick}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      style={{ transformOrigin: "center" }}
     >
       {/* Background glow effect */}
       <motion.div

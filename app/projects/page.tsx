@@ -20,17 +20,6 @@ const projects = [
     featured: true
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
-    longDescription: "A comprehensive project management solution featuring real-time collaboration, task assignment, progress tracking, and team analytics. Built with modern web technologies for optimal performance and user experience.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "JWT"],
-    github: "https://github.com/anandjaiswal/taskmanager",
-    live: "https://tasks.anandjaiswal.dev",
-    date: "2024",
-    category: "Full Stack",
-    featured: true
-  },
-  {
     title: "AI Content Generator",
     description: "AI-powered content creation platform with multiple templates, SEO optimization, and team collaboration features.",
     longDescription: "Leveraging OpenAI's GPT models, this platform helps users generate high-quality content for various purposes. Features include template management, SEO optimization, content scheduling, and team collaboration tools.",
@@ -42,9 +31,50 @@ const projects = [
     featured: true
   },
   {
+    title: "Task Management App",
+    description: "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
+    longDescription: "A comprehensive project management solution featuring real-time collaboration, task assignment, progress tracking, and team analytics. Built with modern web technologies for optimal performance and user experience.",
+    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "JWT"],
+    github: "https://github.com/anandjaiswal/taskmanager",
+    live: "https://tasks.anandjaiswal.dev",
+    date: "2024",
+    category: "Full Stack",
+    featured: true
+  },
+  {
+    title: "Social Media Dashboard",
+    description: "Comprehensive social media management platform with analytics, scheduling, and multi-platform integration.",
+    longDescription: "A powerful dashboard for managing multiple social media accounts with features like post scheduling, engagement analytics, content calendar, and automated reporting. Supports Instagram, Twitter, Facebook, and LinkedIn.",
+    technologies: ["React", "Node.js", "Redis", "PostgreSQL", "Chart.js", "Social APIs"],
+    github: "https://github.com/anandjaiswal/social-dashboard",
+    live: "https://social.anandjaiswal.dev",
+    date: "2024",
+    category: "Full Stack"
+  },
+  {
+    title: "Real Estate Platform",
+    description: "Modern real estate marketplace with property listings, virtual tours, and mortgage calculator.",
+    longDescription: "A comprehensive real estate platform featuring property search, virtual 3D tours, mortgage calculations, agent profiles, and advanced filtering. Includes both buyer and seller dashboards with real-time notifications.",
+    technologies: ["Next.js", "Three.js", "Mapbox", "Stripe", "PostgreSQL", "AWS S3"],
+    github: "https://github.com/anandjaiswal/realestate",
+    live: "https://realestate.anandjaiswal.dev",
+    date: "2024",
+    category: "Full Stack"
+  },
+  {
+    title: "Learning Management System",
+    description: "Educational platform with course creation, progress tracking, and interactive learning tools.",
+    longDescription: "A complete LMS solution for educators and students with features like course creation, video streaming, quizzes, assignments, progress tracking, and certification generation. Includes payment integration for course purchases.",
+    technologies: ["Next.js", "Node.js", "MongoDB", "AWS", "Stripe", "Socket.io"],
+    github: "https://github.com/anandjaiswal/lms",
+    live: "https://learn.anandjaiswal.dev",
+    date: "2024",
+    category: "Full Stack"
+  },
+  {
     title: "Weather Dashboard",
     description: "Beautiful weather application with detailed forecasts, interactive maps, and location-based services.",
-    technologies: ["React", "Weather API", "Chart.js", "Geolocation API"],
+    technologies: ["React", "Weather API", "Chart.js", "Geolocation API", "PWA"],
     github: "https://github.com/anandjaiswal/weather-app",
     live: "https://weather.anandjaiswal.dev",
     date: "2023",
@@ -53,24 +83,41 @@ const projects = [
   {
     title: "Crypto Portfolio Tracker",
     description: "Real-time cryptocurrency portfolio tracking with advanced analytics and price alerts.",
-    technologies: ["Vue.js", "CoinGecko API", "Chart.js", "Firebase"],
+    technologies: ["Vue.js", "CoinGecko API", "Chart.js", "Firebase", "PWA"],
     github: "https://github.com/anandjaiswal/crypto-tracker",
     live: "https://crypto.anandjaiswal.dev",
     date: "2023",
     category: "Frontend"
   },
   {
+    title: "Music Streaming App",
+    description: "Spotify-like music streaming application with playlists, recommendations, and social features.",
+    technologies: ["React", "Node.js", "MongoDB", "AWS S3", "Stripe", "Socket.io"],
+    github: "https://github.com/anandjaiswal/music-app",
+    live: "https://music.anandjaiswal.dev",
+    date: "2023",
+    category: "Full Stack"
+  },
+  {
     title: "Blog CMS",
     description: "Headless content management system for blogs with markdown support and SEO optimization.",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Multer"],
+    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Multer", "Redis"],
     github: "https://github.com/anandjaiswal/blog-cms",
+    date: "2023",
+    category: "Backend"
+  },
+  {
+    title: "API Gateway Service",
+    description: "Microservices API gateway with rate limiting, authentication, and load balancing.",
+    technologies: ["Node.js", "Express", "Redis", "Docker", "Nginx", "JWT"],
+    github: "https://github.com/anandjaiswal/api-gateway",
     date: "2023",
     category: "Backend"
   },
   {
     title: "Chat Application",
     description: "Real-time messaging application with group chats, file sharing, and emoji support.",
-    technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
+    technologies: ["React", "Socket.io", "Node.js", "MongoDB", "AWS S3"],
     github: "https://github.com/anandjaiswal/chat-app",
     live: "https://chat.anandjaiswal.dev",
     date: "2023",
@@ -79,7 +126,7 @@ const projects = [
   {
     title: "Recipe Finder",
     description: "Mobile-first recipe discovery app with ingredient-based search and meal planning.",
-    technologies: ["React Native", "Expo", "Recipe API", "AsyncStorage"],
+    technologies: ["React Native", "Expo", "Recipe API", "AsyncStorage", "Firebase"],
     github: "https://github.com/anandjaiswal/recipe-finder",
     date: "2023",
     category: "Mobile"
@@ -87,14 +134,31 @@ const projects = [
   {
     title: "Expense Tracker",
     description: "Personal finance management app with budget tracking, expense categorization, and financial insights.",
-    technologies: ["Flutter", "Firebase", "Chart.js", "SQLite"],
+    technologies: ["Flutter", "Firebase", "Chart.js", "SQLite", "Dart"],
     github: "https://github.com/anandjaiswal/expense-tracker",
     date: "2023",
     category: "Mobile"
+  },
+  {
+    title: "Fitness Tracker",
+    description: "Comprehensive fitness app with workout tracking, nutrition logging, and progress analytics.",
+    technologies: ["React Native", "Firebase", "HealthKit", "Google Fit", "Chart.js"],
+    github: "https://github.com/anandjaiswal/fitness-tracker",
+    date: "2023",
+    category: "Mobile"
+  },
+  {
+    title: "Smart Home Dashboard",
+    description: "IoT dashboard for controlling smart home devices with real-time monitoring and automation.",
+    technologies: ["React", "MQTT", "Node.js", "InfluxDB", "Grafana", "Arduino"],
+    github: "https://github.com/anandjaiswal/smart-home",
+    live: "https://smarthome.anandjaiswal.dev",
+    date: "2023",
+    category: "IoT"
   }
 ]
 
-const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile", "AI/ML"]
+const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile", "AI/ML", "IoT"]
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -173,7 +237,7 @@ export default function ProjectsPage() {
             { label: "Technologies Used", value: "20+" },
             { label: "Years Experience", value: "3+" },
             { label: "Happy Clients", value: "15+" }
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {stat.value}
