@@ -1,12 +1,11 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { HiArrowDown, HiDownload } from "react-icons/hi"
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { GradientText } from "@/components/ui/gradient-text"
-import { FloatingCard } from "@/components/ui/floating-card"
+
 import { MagneticButton } from "@/components/ui/magnetic-button"
 import { ParallaxSection } from "@/components/ui/parallax-section"
 
@@ -25,10 +24,16 @@ export function HeroSection() {
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
         </ParallaxSection>
         <ParallaxSection speed={0.5} direction="down">
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
         </ParallaxSection>
         <ParallaxSection speed={0.2}>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+          <div
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          />
         </ParallaxSection>
       </div>
 
@@ -46,11 +51,9 @@ export function HeroSection() {
               className="text-lg md:text-xl text-foreground-secondary mb-4"
               delay={0.2}
             />
-            
+
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <GradientText gradient="primary">
-                Anand Jaiswal
-              </GradientText>
+              <GradientText gradient="primary">Anand Jaiswal</GradientText>
             </h1>
 
             <AnimatedText
@@ -77,7 +80,9 @@ export function HeroSection() {
             <div className="w-full sm:w-auto">
               <MagneticButton
                 className="w-full sm:w-auto min-w-[200px] flex items-center gap-2 justify-center group"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 View My Work
                 <HiArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />

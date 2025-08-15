@@ -11,12 +11,12 @@ interface AnimatedTextProps {
   variant?: "fade" | "slide" | "scale" | "typewriter"
 }
 
-export function AnimatedText({ 
-  text, 
-  className, 
-  delay = 0, 
+export function AnimatedText({
+  text,
+  className,
+  delay = 0,
   duration = 0.5,
-  variant = "fade" 
+  variant = "fade",
 }: AnimatedTextProps) {
   const words = text.split(" ")
 
@@ -66,11 +66,7 @@ export function AnimatedText({
       className={cn("flex flex-wrap", className)}
     >
       {words.map((word, index) => (
-        <motion.span
-          key={index}
-          variants={wordVariants}
-          className="inline-block mr-2"
-        >
+        <motion.span key={index} variants={wordVariants} className="inline-block mr-2">
           {word}
         </motion.span>
       ))}

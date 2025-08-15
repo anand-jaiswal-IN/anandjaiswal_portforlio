@@ -44,14 +44,12 @@ export function Timeline({ items, className }: TimelineProps) {
                 viewport={{ once: true }}
                 className={cn(
                   "w-8 h-8 rounded-full border-4 border-background-primary flex items-center justify-center",
-                  item.current 
-                    ? "bg-primary shadow-lg animate-pulse-glow" 
+                  item.current
+                    ? "bg-primary shadow-lg animate-pulse-glow"
                     : "bg-gradient-to-br from-primary to-accent"
                 )}
               >
-                {item.current && (
-                  <div className="w-2 h-2 bg-white rounded-full" />
-                )}
+                {item.current && <div className="w-2 h-2 bg-white rounded-full" />}
               </motion.div>
             </div>
 
@@ -69,10 +67,8 @@ export function Timeline({ items, className }: TimelineProps) {
                   <h3 className="text-xl font-bold text-foreground-primary group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-lg text-primary font-semibold">
-                    {item.organization}
-                  </p>
-                  
+                  <p className="text-lg text-primary font-semibold">{item.organization}</p>
+
                   <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-foreground-muted">
                     <div className="flex items-center gap-1">
                       <HiCalendar className="w-4 h-4" />
@@ -93,9 +89,7 @@ export function Timeline({ items, className }: TimelineProps) {
                 </div>
 
                 {/* Description */}
-                <p className="text-foreground-muted leading-relaxed mb-4">
-                  {item.description}
-                </p>
+                <p className="text-foreground-muted leading-relaxed mb-4">{item.description}</p>
 
                 {/* Achievements */}
                 {item.achievements && item.achievements.length > 0 && (

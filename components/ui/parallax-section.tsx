@@ -11,16 +11,16 @@ interface ParallaxSectionProps {
   direction?: "up" | "down"
 }
 
-export function ParallaxSection({ 
-  children, 
-  className, 
+export function ParallaxSection({
+  children,
+  className,
   speed = 0.5,
-  direction = "up" 
+  direction = "up",
 }: ParallaxSectionProps) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   })
 
   const y = useTransform(
@@ -31,9 +31,7 @@ export function ParallaxSection({
 
   return (
     <div ref={ref} className={cn("relative overflow-hidden", className)}>
-      <motion.div style={{ y }}>
-        {children}
-      </motion.div>
+      <motion.div style={{ y }}>{children}</motion.div>
     </div>
   )
 }

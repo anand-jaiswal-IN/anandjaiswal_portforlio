@@ -12,12 +12,7 @@ interface ViewAllButtonProps {
   delay?: number
 }
 
-export function ViewAllButton({ 
-  href, 
-  children, 
-  className, 
-  delay = 0.6 
-}: ViewAllButtonProps) {
+export function ViewAllButton({ href, children, className, delay = 0.6 }: ViewAllButtonProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

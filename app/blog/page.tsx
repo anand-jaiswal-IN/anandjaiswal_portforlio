@@ -1,14 +1,12 @@
-import { motion } from "framer-motion"
 import { getAllPosts, getFeaturedPosts, getAllTags } from "@/lib/blog"
 import { BlogCard } from "@/components/ui/blog-card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { AnimatedText } from "@/components/ui/animated-text"
 
 export default async function BlogPage() {
   const [allPosts, featuredPosts, allTags] = await Promise.all([
     getAllPosts(),
     getFeaturedPosts(),
-    getAllTags()
+    getAllTags(),
   ])
 
   return (
@@ -17,13 +15,12 @@ export default async function BlogPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <GradientText gradient="primary">
-              Blog & Insights
-            </GradientText>
+            <GradientText gradient="primary">Blog & Insights</GradientText>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-foreground-muted max-w-3xl mx-auto leading-relaxed">
-            Thoughts, tutorials, and insights about web development, technology trends, and my journey as a developer
+            Thoughts, tutorials, and insights about web development, technology trends, and my
+            journey as a developer
           </p>
         </div>
 
@@ -31,19 +28,12 @@ export default async function BlogPage() {
         {featuredPosts.length > 0 && (
           <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-8">
-              <GradientText gradient="secondary">
-                Featured Posts
-              </GradientText>
+              <GradientText gradient="secondary">Featured Posts</GradientText>
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post, index) => (
-                <BlogCard
-                  key={post.slug}
-                  {...post}
-                  featured={true}
-                  delay={index * 0.1}
-                />
+                <BlogCard key={post.slug} {...post} featured={true} delay={index * 0.1} />
               ))}
             </div>
           </div>
@@ -53,16 +43,14 @@ export default async function BlogPage() {
         <div className="mb-16">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-0">
-              <GradientText gradient="rainbow">
-                All Posts
-              </GradientText>
+              <GradientText gradient="rainbow">All Posts</GradientText>
             </h2>
-            
+
             {/* Tags Filter - Simple version for now */}
             {allTags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 <span className="text-sm text-foreground-muted">Topics:</span>
-                {allTags.slice(0, 5).map((tag) => (
+                {allTags.slice(0, 5).map(tag => (
                   <span
                     key={tag}
                     className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
@@ -78,26 +66,20 @@ export default async function BlogPage() {
               </div>
             )}
           </div>
-          
+
           {allPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {allPosts.map((post, index) => (
-                <BlogCard
-                  key={post.slug}
-                  {...post}
-                  delay={index * 0.1}
-                />
+                <BlogCard key={post.slug} {...post} delay={index * 0.1} />
               ))}
             </div>
           ) : (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">📝</div>
-              <h3 className="text-2xl font-bold text-foreground-primary mb-4">
-                No Blog Posts Yet
-              </h3>
+              <h3 className="text-2xl font-bold text-foreground-primary mb-4">No Blog Posts Yet</h3>
               <p className="text-foreground-muted max-w-md mx-auto">
-                I'm working on some amazing content! Check back soon for insights about web development, 
-                technology trends, and my coding journey.
+                I'm working on some amazing content! Check back soon for insights about web
+                development, technology trends, and my coding journey.
               </p>
             </div>
           )}
@@ -106,15 +88,13 @@ export default async function BlogPage() {
         {/* Newsletter Signup */}
         <div className="text-center bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            <GradientText gradient="primary">
-              Stay Updated
-            </GradientText>
+            <GradientText gradient="primary">Stay Updated</GradientText>
           </h3>
           <p className="text-foreground-muted mb-6 max-w-2xl mx-auto">
-            Subscribe to get notified when I publish new articles about web development, 
-            technology insights, and coding tutorials.
+            Subscribe to get notified when I publish new articles about web development, technology
+            insights, and coding tutorials.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"

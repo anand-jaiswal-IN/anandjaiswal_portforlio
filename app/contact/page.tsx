@@ -16,35 +16,55 @@ const contactInfo = [
     title: "Email",
     value: "hello@anandjaiswal.dev",
     href: "mailto:hello@anandjaiswal.dev",
-    color: "text-blue-500"
+    color: "text-blue-500",
   },
   {
     icon: HiPhone,
     title: "Phone",
     value: "+91 98765 43210",
     href: "tel:+919876543210",
-    color: "text-green-500"
+    color: "text-green-500",
   },
   {
     icon: HiLocationMarker,
     title: "Location",
     value: "Delhi, India",
     href: "https://maps.google.com/?q=Delhi,India",
-    color: "text-red-500"
+    color: "text-red-500",
   },
   {
     icon: HiClock,
     title: "Response Time",
     value: "Within 24 hours",
-    color: "text-purple-500"
-  }
+    color: "text-purple-500",
+  },
 ]
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/anandjaiswal", label: "GitHub", color: "hover:text-gray-900" },
-  { icon: FaLinkedin, href: "https://linkedin.com/in/anandjaiswal", label: "LinkedIn", color: "hover:text-blue-600" },
-  { icon: FaTwitter, href: "https://twitter.com/anandjaiswal", label: "Twitter", color: "hover:text-blue-400" },
-  { icon: FaInstagram, href: "https://instagram.com/anandjaiswal", label: "Instagram", color: "hover:text-pink-500" },
+  {
+    icon: FaGithub,
+    href: "https://github.com/anandjaiswal",
+    label: "GitHub",
+    color: "hover:text-gray-900",
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://linkedin.com/in/anandjaiswal",
+    label: "LinkedIn",
+    color: "hover:text-blue-600",
+  },
+  {
+    icon: FaTwitter,
+    href: "https://twitter.com/anandjaiswal",
+    label: "Twitter",
+    color: "hover:text-blue-400",
+  },
+  {
+    icon: FaInstagram,
+    href: "https://instagram.com/anandjaiswal",
+    label: "Instagram",
+    color: "hover:text-pink-500",
+  },
 ]
 
 export default function ContactPage() {
@@ -52,7 +72,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
@@ -60,14 +80,14 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     try {
       await new Promise(resolve => setTimeout(resolve, 2000))
@@ -92,11 +112,9 @@ export default function ContactPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <GradientText gradient="primary">
-              Get In Touch
-            </GradientText>
+            <GradientText gradient="primary">Get In Touch</GradientText>
           </h1>
-          
+
           <AnimatedText
             text="Have a project in mind or just want to chat? I'd love to hear from you. Let's create something amazing together!"
             className="text-lg md:text-xl text-foreground-muted max-w-3xl mx-auto leading-relaxed"
@@ -112,9 +130,7 @@ export default function ContactPage() {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-8">
-              <GradientText gradient="secondary">
-                Let's Connect
-              </GradientText>
+              <GradientText gradient="secondary">Let's Connect</GradientText>
             </h2>
 
             <div className="space-y-6 mb-12">
@@ -127,18 +143,18 @@ export default function ContactPage() {
                   className="p-6 hover:scale-105 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center`}>
+                    <div
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center`}
+                    >
                       <info.icon className={`w-6 h-6 ${info.color}`} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground-primary mb-1">
-                        {info.title}
-                      </h3>
+                      <h3 className="font-semibold text-foreground-primary mb-1">{info.title}</h3>
                       {info.href ? (
                         <a
                           href={info.href}
-                          target={info.href.startsWith('http') ? '_blank' : undefined}
-                          rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          target={info.href.startsWith("http") ? "_blank" : undefined}
+                          rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           className="text-foreground-muted hover:text-primary transition-colors"
                         >
                           {info.value}
@@ -154,9 +170,7 @@ export default function ContactPage() {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-foreground-primary">
-                Follow Me
-              </h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground-primary">Follow Me</h3>
               <div className="flex gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -185,20 +199,16 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <FloatingCard
-              delay={0.8}
-              intensity="low"
-              style="glass"
-              className="p-8"
-            >
-              <h2 className="text-2xl font-bold mb-6 text-foreground-primary">
-                Send a Message
-              </h2>
+            <FloatingCard delay={0.8} intensity="low" style="glass" className="p-8">
+              <h2 className="text-2xl font-bold mb-6 text-foreground-primary">Send a Message</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground-primary mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-foreground-primary mb-2"
+                    >
                       Name *
                     </label>
                     <input
@@ -213,7 +223,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground-primary mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-foreground-primary mb-2"
+                    >
                       Email *
                     </label>
                     <input
@@ -230,7 +243,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground-primary mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-foreground-primary mb-2"
+                  >
                     Subject *
                   </label>
                   <input
@@ -246,7 +262,10 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground-primary mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-foreground-primary mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -315,29 +334,30 @@ export default function ContactPage() {
           className="mt-20"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            <GradientText gradient="rainbow">
-              Frequently Asked Questions
-            </GradientText>
+            <GradientText gradient="rainbow">Frequently Asked Questions</GradientText>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 question: "What's your typical response time?",
-                answer: "I usually respond within 24 hours, often much sooner during business hours."
+                answer:
+                  "I usually respond within 24 hours, often much sooner during business hours.",
               },
               {
                 question: "Do you work on weekends?",
-                answer: "I'm flexible with timing and can accommodate urgent projects when needed."
+                answer: "I'm flexible with timing and can accommodate urgent projects when needed.",
               },
               {
                 question: "What types of projects do you take on?",
-                answer: "I work on web applications, mobile apps, APIs, and full-stack solutions of all sizes."
+                answer:
+                  "I work on web applications, mobile apps, APIs, and full-stack solutions of all sizes.",
               },
               {
                 question: "Do you offer ongoing support?",
-                answer: "Yes! I provide maintenance and support packages for all projects I develop."
-              }
+                answer:
+                  "Yes! I provide maintenance and support packages for all projects I develop.",
+              },
             ].map((faq, index) => (
               <FloatingCard
                 key={index}
@@ -346,12 +366,8 @@ export default function ContactPage() {
                 style="glass"
                 className="p-6"
               >
-                <h3 className="font-semibold text-foreground-primary mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-foreground-muted text-sm">
-                  {faq.answer}
-                </p>
+                <h3 className="font-semibold text-foreground-primary mb-2">{faq.question}</h3>
+                <p className="text-foreground-muted text-sm">{faq.answer}</p>
               </FloatingCard>
             ))}
           </div>

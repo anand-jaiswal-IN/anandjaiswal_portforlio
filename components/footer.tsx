@@ -22,7 +22,7 @@ const quickLinks = [
 
 export function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   return (
@@ -38,15 +38,13 @@ export function Footer() {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold mb-4">
-                <GradientText gradient="primary">
-                  Anand Jaiswal
-                </GradientText>
+                <GradientText gradient="primary">Anand Jaiswal</GradientText>
               </h3>
               <p className="text-foreground-muted mb-6 max-w-md leading-relaxed">
-                Full-stack developer passionate about creating exceptional digital experiences. 
+                Full-stack developer passionate about creating exceptional digital experiences.
                 Let's build something amazing together.
               </p>
-              
+
               {/* Social Links */}
               <div className="flex gap-4">
                 {socialLinks.map((link, index) => (
@@ -79,11 +77,9 @@ export function Footer() {
               transition={{ delay: 0.2, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-4 text-foreground-primary">
-                Quick Links
-              </h4>
+              <h4 className="text-lg font-semibold mb-4 text-foreground-primary">Quick Links</h4>
               <ul className="space-y-2">
-                {quickLinks.map((link) => (
+                {quickLinks.map(link => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -105,9 +101,7 @@ export function Footer() {
               transition={{ delay: 0.4, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold mb-4 text-foreground-primary">
-                Get In Touch
-              </h4>
+              <h4 className="text-lg font-semibold mb-4 text-foreground-primary">Get In Touch</h4>
               <div className="space-y-2 text-foreground-muted">
                 <p>hello@anandjaiswal.dev</p>
                 <p>Delhi, India</p>

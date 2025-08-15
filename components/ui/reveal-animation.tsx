@@ -19,7 +19,7 @@ export function RevealAnimation({
   direction = "up",
   delay = 0,
   duration = 0.6,
-  distance = 30
+  distance = 30,
 }: RevealAnimationProps) {
   const { ref, isInView } = useScrollAnimation()
 
@@ -40,13 +40,13 @@ export function RevealAnimation({
 
   const initial = {
     opacity: 0,
-    ...getInitialPosition()
+    ...getInitialPosition(),
   }
 
   const animate = {
     opacity: isInView ? 1 : 0,
     x: isInView ? 0 : getInitialPosition().x,
-    y: isInView ? 0 : getInitialPosition().y
+    y: isInView ? 0 : getInitialPosition().y,
   }
 
   return (
@@ -57,7 +57,7 @@ export function RevealAnimation({
       transition={{
         duration,
         delay,
-        ease: "easeOut"
+        ease: "easeOut",
       }}
       className={cn(className)}
     >
@@ -77,16 +77,12 @@ export function StaggeredReveal({
   children,
   className,
   staggerDelay = 0.1,
-  direction = "up"
+  direction = "up",
 }: StaggeredRevealProps) {
   return (
     <div className={className}>
       {children.map((child, index) => (
-        <RevealAnimation
-          key={index}
-          direction={direction}
-          delay={index * staggerDelay}
-        >
+        <RevealAnimation key={index} direction={direction} delay={index * staggerDelay}>
           {child}
         </RevealAnimation>
       ))}

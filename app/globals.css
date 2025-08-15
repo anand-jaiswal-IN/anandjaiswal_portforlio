@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -31,12 +31,10 @@
 }
 
 .hover\:shadow-primary\/25:hover {
-  box-shadow: 0 10px 25px -3px rgba(237, 96, 40, 0.25), 0 4px 6px -2px rgba(237, 96, 40, 0.05) !important;
+  box-shadow:
+    0 10px 25px -3px rgba(237, 96, 40, 0.25),
+    0 4px 6px -2px rgba(237, 96, 40, 0.05) !important;
 }
-
-
-
-
 
 :root {
   --background-primary: #fffcf2;
@@ -72,8 +70,8 @@
   --color-foreground-secondary: var(--foreground-secondary);
   --color-foreground-muted: var(--foreground-muted);
   --color-border: var(--border-color);
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 * {
@@ -89,7 +87,9 @@ body {
   color: var(--foreground-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Glassmorphism utilities */
@@ -136,19 +136,37 @@ body {
 
 /* Animation utilities */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px var(--color-primary); }
-  50% { box-shadow: 0 0 40px var(--color-primary), 0 0 60px var(--color-primary); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--color-primary);
+  }
+  50% {
+    box-shadow:
+      0 0 40px var(--color-primary),
+      0 0 60px var(--color-primary);
+  }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animate-float {
@@ -200,10 +218,18 @@ body {
   margin-bottom: 1rem;
 }
 
-.blog-content h1 { font-size: 2.25rem; }
-.blog-content h2 { font-size: 1.875rem; }
-.blog-content h3 { font-size: 1.5rem; }
-.blog-content h4 { font-size: 1.25rem; }
+.blog-content h1 {
+  font-size: 2.25rem;
+}
+.blog-content h2 {
+  font-size: 1.875rem;
+}
+.blog-content h3 {
+  font-size: 1.5rem;
+}
+.blog-content h4 {
+  font-size: 1.25rem;
+}
 
 .blog-content p {
   margin-bottom: 1.5rem;

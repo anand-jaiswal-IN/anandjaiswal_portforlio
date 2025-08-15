@@ -13,13 +13,13 @@ interface StatsCardProps {
   color?: string
 }
 
-export function StatsCard({ 
-  icon: Icon, 
-  value, 
-  label, 
-  description, 
+export function StatsCard({
+  icon: Icon,
+  value,
+  label,
+  description,
   delay = 0,
-  color = "text-primary"
+  color = "text-primary",
 }: StatsCardProps) {
   return (
     <FloatingCard
@@ -28,10 +28,12 @@ export function StatsCard({
       style="glass"
       className="text-center group hover:scale-105 transition-all duration-300"
     >
-      <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:shadow-lg transition-all duration-300`}>
+      <div
+        className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:shadow-lg transition-all duration-300`}
+      >
         <Icon className={`w-8 h-8 ${color}`} />
       </div>
-      
+
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -41,15 +43,11 @@ export function StatsCard({
       >
         {value}
       </motion.div>
-      
-      <h3 className="text-lg font-semibold text-foreground-primary mb-2">
-        {label}
-      </h3>
-      
+
+      <h3 className="text-lg font-semibold text-foreground-primary mb-2">{label}</h3>
+
       {description && (
-        <p className="text-foreground-muted text-sm leading-relaxed">
-          {description}
-        </p>
+        <p className="text-foreground-muted text-sm leading-relaxed">{description}</p>
       )}
     </FloatingCard>
   )

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { motion } from "framer-motion"
+
 import { HiCalendar, HiClock, HiUser, HiTag, HiArrowLeft, HiShare } from "react-icons/hi"
 import Link from "next/link"
 import { getPostBySlug, getAllPostSlugs } from "@/lib/blog"
@@ -7,20 +7,21 @@ import { formatDate } from "@/lib/utils"
 import { GradientText } from "@/components/ui/gradient-text"
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs()
-  return slugs.map((slug) => ({
+  return slugs.map(slug => ({
     slug,
   }))
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -30,7 +31,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="min-h-screen py-20 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Back Button */}
-        <Link 
+        <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors mb-8 group"
         >
@@ -43,19 +44,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Featured Image */}
           {post.image && (
             <div className="aspect-video rounded-2xl overflow-hidden mb-8 bg-gradient-to-br from-primary/20 to-accent/20">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
+              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
             </div>
           )}
 
           {/* Title */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            <GradientText gradient="primary">
-              {post.title}
-            </GradientText>
+            <GradientText gradient="primary">{post.title}</GradientText>
           </h1>
 
           {/* Meta Information */}
@@ -77,7 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Tags */}
           {post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-6">
-              {post.tags.map((tag) => (
+              {post.tags.map(tag => (
                 <span
                   key={tag}
                   className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20 flex items-center gap-1"
@@ -98,10 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Article Content */}
         <article className="prose prose-lg max-w-none">
-          <div 
-            className="blog-content"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
         {/* Article Footer */}
@@ -112,11 +104,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 About the Author
               </h3>
               <p className="text-foreground-muted">
-                {post.author} is a full-stack developer passionate about creating 
-                exceptional digital experiences and sharing knowledge with the community.
+                {post.author} is a full-stack developer passionate about creating exceptional
+                digital experiences and sharing knowledge with the community.
               </p>
             </div>
-            
+
             <div className="flex gap-4">
               <button className="px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition-colors">
                 Follow

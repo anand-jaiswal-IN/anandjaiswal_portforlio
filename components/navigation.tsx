@@ -29,21 +29,21 @@ export function Navigation() {
   // Close mobile menu on escape key
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setIsOpen(false)
       }
     }
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
+      document.addEventListener("keydown", handleEscape)
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset"
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
+      document.removeEventListener("keydown", handleEscape)
+      document.body.style.overflow = "unset"
     }
   }, [isOpen])
 
@@ -67,7 +67,7 @@ export function Navigation() {
             />
           </Link>
           <div className="flex items-center gap-1">
-            {navItems.map((item) => {
+            {navItems.map(item => {
               const isActive = pathname === item.href
               return (
                 <Link

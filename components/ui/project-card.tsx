@@ -30,7 +30,7 @@ export function ProjectCard({
   date,
   category,
   featured = false,
-  delay = 0
+  delay = 0,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -44,7 +44,7 @@ export function ProjectCard({
         intensity="low"
         style="glass"
         className={`h-full overflow-hidden hover:shadow-2xl transition-all duration-500 ${
-          featured ? 'ring-2 ring-primary/20' : ''
+          featured ? "ring-2 ring-primary/20" : ""
         }`}
       >
         {/* Featured Badge */}
@@ -63,11 +63,14 @@ export function ProjectCard({
               <img src={image} alt={title} className="w-full h-full object-cover" />
             ) : (
               <div className="text-4xl font-bold text-primary/50">
-                {title.split(' ').map(word => word[0]).join('')}
+                {title
+                  .split(" ")
+                  .map(word => word[0])
+                  .join("")}
               </div>
             )}
           </div>
-          
+
           {/* Overlay on hover */}
           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
             {github && (
@@ -116,14 +119,12 @@ export function ProjectCard({
           <h3 className="text-xl font-bold text-foreground-primary group-hover:text-primary transition-colors">
             {title}
           </h3>
-          
-          <p className="text-foreground-muted text-sm leading-relaxed flex-1">
-            {description}
-          </p>
+
+          <p className="text-foreground-muted text-sm leading-relaxed flex-1">{description}</p>
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-2">
-            {technologies.map((tech) => (
+            {technologies.map(tech => (
               <span
                 key={tech}
                 className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"

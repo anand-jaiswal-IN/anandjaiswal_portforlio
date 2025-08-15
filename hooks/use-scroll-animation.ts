@@ -12,9 +12,8 @@ interface UseScrollAnimationOptions {
 export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
   const ref = useRef(null)
   const isInView = useInView(ref, {
-    threshold: options.threshold || 0.1,
+    amount: options.threshold || 0.1,
     once: options.triggerOnce !== false,
-    margin: options.rootMargin || "0px 0px -100px 0px"
   })
 
   return { ref, isInView }
@@ -26,13 +25,14 @@ export function useScrollProgress() {
   useEffect(() => {
     const updateScrollProgress = () => {
       const scrollPx = document.documentElement.scrollTop
-      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const winHeightPx =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight
       const scrolled = scrollPx / winHeightPx
       setScrollProgress(scrolled)
     }
 
-    window.addEventListener('scroll', updateScrollProgress)
-    return () => window.removeEventListener('scroll', updateScrollProgress)
+    window.addEventListener("scroll", updateScrollProgress)
+    return () => window.removeEventListener("scroll", updateScrollProgress)
   }, [])
 
   return scrollProgress
@@ -46,8 +46,8 @@ export function useParallax(speed: number = 0.5) {
       setOffset(window.pageYOffset * speed)
     }
 
-    window.addEventListener('scroll', updateOffset)
-    return () => window.removeEventListener('scroll', updateOffset)
+    window.addEventListener("scroll", updateOffset)
+    return () => window.removeEventListener("scroll", updateOffset)
   }, [speed])
 
   return offset

@@ -10,31 +10,34 @@ import { GradientText } from "@/components/ui/gradient-text"
 const featuredProjects = [
   {
     title: "E-Commerce Platform",
-    description: "A modern, full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
+    description:
+      "A modern, full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
     github: "https://github.com/anandjaiswal/ecommerce",
     live: "https://ecommerce-demo.anandjaiswal.dev",
-    featured: true
+    featured: true,
   },
   {
     title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
+    description:
+      "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
     image: "/api/placeholder/600/400",
     technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/anandjaiswal/taskmanager",
     live: "https://tasks.anandjaiswal.dev",
-    featured: true
+    featured: true,
   },
   {
     title: "AI Content Generator",
-    description: "AI-powered content creation platform with multiple templates, SEO optimization, and team collaboration.",
+    description:
+      "AI-powered content creation platform with multiple templates, SEO optimization, and team collaboration.",
     image: "/api/placeholder/600/400",
     technologies: ["Next.js", "OpenAI", "Prisma", "Tailwind"],
     github: "https://github.com/anandjaiswal/ai-content",
     live: "https://content.anandjaiswal.dev",
-    featured: true
-  }
+    featured: true,
+  },
 ]
 
 export function FeaturedProjects() {
@@ -49,12 +52,11 @@ export function FeaturedProjects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <GradientText gradient="primary">
-              Featured Projects
-            </GradientText>
+            <GradientText gradient="primary">Featured Projects</GradientText>
           </h2>
           <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
-            A showcase of my recent work, demonstrating expertise in modern web technologies and creative problem-solving
+            A showcase of my recent work, demonstrating expertise in modern web technologies and
+            creative problem-solving
           </p>
         </motion.div>
 
@@ -78,10 +80,13 @@ export function FeaturedProjects() {
                 <div className="relative mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
                   <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
                     <div className="text-4xl font-bold text-primary/50">
-                      {project.title.split(' ').map(word => word[0]).join('')}
+                      {project.title
+                        .split(" ")
+                        .map(word => word[0])
+                        .join("")}
                     </div>
                   </div>
-                  
+
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <motion.a
@@ -112,14 +117,14 @@ export function FeaturedProjects() {
                   <h3 className="text-xl font-bold text-foreground-primary group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-foreground-muted text-sm leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map(tech => (
                       <span
                         key={tech}
                         className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"

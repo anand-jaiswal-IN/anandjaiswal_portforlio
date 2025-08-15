@@ -9,7 +9,11 @@ interface ProjectFilterProps {
   onCategoryChange: (category: string) => void
 }
 
-export function ProjectFilter({ categories, activeCategory, onCategoryChange }: ProjectFilterProps) {
+export function ProjectFilter({
+  categories,
+  activeCategory,
+  onCategoryChange,
+}: ProjectFilterProps) {
   return (
     <div className="flex flex-wrap justify-center gap-2 mb-12">
       {categories.map((category, index) => (

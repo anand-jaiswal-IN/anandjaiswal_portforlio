@@ -12,24 +12,24 @@ interface FloatingCardProps {
   style?: "glass" | "neomorphism" | "minimal"
 }
 
-export function FloatingCard({ 
-  children, 
+export function FloatingCard({
+  children,
   className,
   delay = 0,
   duration = 3,
   intensity = "medium",
-  style = "glass"
+  style = "glass",
 }: FloatingCardProps) {
   const intensityMap = {
     low: { y: [-5, 5] },
     medium: { y: [-10, 10] },
-    high: { y: [-15, 15] }
+    high: { y: [-15, 15] },
   }
 
   const styleClasses = {
     glass: "glass",
     neomorphism: "neomorphism",
-    minimal: "bg-background-secondary/50 border border-border"
+    minimal: "bg-background-secondary/50 border border-border",
   }
 
   return (
@@ -42,7 +42,7 @@ export function FloatingCard({
       transition={{
         delay,
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut",
       }}
       className={cn(
         "relative p-6 rounded-2xl transition-all duration-300",
@@ -52,7 +52,7 @@ export function FloatingCard({
       )}
       whileHover={{
         y: -2,
-        transition: { duration: 0.2 }
+        transition: { duration: 0.2 },
       }}
     >
       {children}

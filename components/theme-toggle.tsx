@@ -14,15 +14,13 @@ export function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return (
-      <div className="w-10 h-10 rounded-full glass animate-pulse" />
-    )
+    return <div className="w-10 h-10 rounded-full glass animate-pulse" />
   }
 
   const themes = [
-    { name: 'light', icon: HiSun, label: 'Light' },
-    { name: 'dark', icon: HiMoon, label: 'Dark' },
-    { name: 'system', icon: HiDesktopComputer, label: 'System' }
+    { name: "light", icon: HiSun, label: "Light" },
+    { name: "dark", icon: HiMoon, label: "Dark" },
+    { name: "system", icon: HiDesktopComputer, label: "System" },
   ]
 
   return (

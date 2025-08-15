@@ -1,10 +1,10 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import { remark } from "remark"
+import html from "remark-html"
 
-const postsDirectory = path.join(process.cwd(), 'content/blog')
+const postsDirectory = path.join(process.cwd(), "content/blog")
 
 export interface BlogPost {
   slug: string
@@ -40,9 +40,7 @@ function calculateReadTime(content: string): number {
 export function getAllPostSlugs(): string[] {
   try {
     const fileNames = fs.readdirSync(postsDirectory)
-    return fileNames
-      .filter(name => name.endsWith('.md'))
-      .map(name => name.replace(/\.md$/, ''))
+    return fileNames.filter(name => name.endsWith(".md")).map(name => name.replace(/\.md$/, ""))
   } catch (error) {
     return []
   }
@@ -51,26 +49,24 @@ export function getAllPostSlugs(): string[] {
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const fileContents = fs.readFileSync(fullPath, "utf8")
     const { data, content } = matter(fileContents)
 
     // Process markdown content to HTML
-    const processedContent = await remark()
-      .use(html)
-      .process(content)
+    const processedContent = await remark().use(html).process(content)
     const contentHtml = processedContent.toString()
 
     return {
       slug,
-      title: data.title || 'Untitled',
+      title: data.title || "Untitled",
       date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || content.substring(0, 160) + '...',
+      excerpt: data.excerpt || content.substring(0, 160) + "...",
       content: contentHtml,
-      author: data.author || 'Anand Jaiswal',
+      author: data.author || "Anand Jaiswal",
       tags: data.tags || [],
       readTime: calculateReadTime(content),
       featured: data.featured || false,
-      image: data.image || null
+      image: data.image || null,
     }
   } catch (error) {
     return null
@@ -80,10 +76,12 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 export async function getAllPosts(): Promise<BlogPostMeta[]> {
   const slugs = getAllPostSlugs()
   const posts = await Promise.all(
-    slugs.map(async (slug) => {
+    slugs.map(async slug => {
       const post = await getPostBySlug(slug)
-      if (!post) return null
-      
+      if (!post) {
+        return null
+      }
+
       // Return only metadata for listing
       const { content, ...meta } = post
       return meta
@@ -102,10 +100,8 @@ export async function getFeaturedPosts(): Promise<BlogPostMeta[]> {
 
 export async function getPostsByTag(tag: string): Promise<BlogPostMeta[]> {
   const allPosts = await getAllPosts()
-  return allPosts.filter(post => 
-    post.tags.some(postTag => 
-      postTag.toLowerCase() === tag.toLowerCase()
-    )
+  return allPosts.filter(post =>
+    post.tags.some(postTag => postTag.toLowerCase() === tag.toLowerCase())
   )
 }
 
@@ -113,13 +109,13 @@ export function getAllTags(): string[] {
   try {
     const slugs = getAllPostSlugs()
     const allTags = new Set<string>()
-    
+
     slugs.forEach(slug => {
       try {
         const fullPath = path.join(postsDirectory, `${slug}.md`)
-        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const fileContents = fs.readFileSync(fullPath, "utf8")
         const { data } = matter(fileContents)
-        
+
         if (data.tags && Array.isArray(data.tags)) {
           data.tags.forEach((tag: string) => allTags.add(tag))
         }
@@ -127,7 +123,7 @@ export function getAllTags(): string[] {
         // Skip files that can't be read
       }
     })
-    
+
     return Array.from(allTags).sort()
   } catch (error) {
     return []

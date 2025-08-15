@@ -12,7 +12,7 @@ interface BlogCardProps extends BlogPostMeta {
   featured?: boolean
 }
 
-export function BlogCard({ 
+export function BlogCard({
   slug,
   title,
   date,
@@ -22,7 +22,7 @@ export function BlogCard({
   readTime,
   featured = false,
   image,
-  delay = 0
+  delay = 0,
 }: BlogCardProps) {
   return (
     <motion.div
@@ -36,7 +36,7 @@ export function BlogCard({
         intensity="low"
         style="glass"
         className={`h-full overflow-hidden hover:shadow-2xl transition-all duration-500 ${
-          featured ? 'ring-2 ring-primary/20' : ''
+          featured ? "ring-2 ring-primary/20" : ""
         }`}
       >
         {/* Featured Badge */}
@@ -55,11 +55,15 @@ export function BlogCard({
               <img src={image} alt={title} className="w-full h-full object-cover" />
             ) : (
               <div className="text-4xl font-bold text-primary/50">
-                {title.split(' ').slice(0, 2).map(word => word[0]).join('')}
+                {title
+                  .split(" ")
+                  .slice(0, 2)
+                  .map(word => word[0])
+                  .join("")}
               </div>
             )}
           </div>
-          
+
           {/* Overlay on hover */}
           <Link href={`/blog/${slug}`}>
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -97,7 +101,7 @@ export function BlogCard({
               {title}
             </h3>
           </Link>
-          
+
           <p className="text-foreground-muted text-sm leading-relaxed flex-1 line-clamp-3">
             {excerpt}
           </p>
@@ -105,7 +109,7 @@ export function BlogCard({
           {/* Tags */}
           {tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {tags.slice(0, 3).map((tag) => (
+              {tags.slice(0, 3).map(tag => (
                 <span
                   key={tag}
                   className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20 flex items-center gap-1"

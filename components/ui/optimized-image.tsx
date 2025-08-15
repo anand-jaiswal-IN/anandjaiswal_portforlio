@@ -31,7 +31,7 @@ export function OptimizedImage({
   blurDataURL,
   fill = false,
   sizes,
-  quality = 75
+  quality = 75,
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
@@ -47,10 +47,12 @@ export function OptimizedImage({
 
   if (hasError) {
     return (
-      <div className={cn(
-        "flex items-center justify-center bg-background-secondary rounded-lg",
-        className
-      )}>
+      <div
+        className={cn(
+          "flex items-center justify-center bg-background-secondary rounded-lg",
+          className
+        )}
+      >
         <div className="text-center p-8">
           <div className="text-4xl mb-2">🖼️</div>
           <p className="text-foreground-muted text-sm">Failed to load image</p>
@@ -103,18 +105,18 @@ export function OptimizedImage({
 
 // Placeholder blur data URL generator
 export function generateBlurDataURL(width: number = 10, height: number = 10): string {
-  const canvas = document.createElement('canvas')
+  const canvas = document.createElement("canvas")
   canvas.width = width
   canvas.height = height
-  const ctx = canvas.getContext('2d')
-  
+  const ctx = canvas.getContext("2d")
+
   if (ctx) {
     const gradient = ctx.createLinearGradient(0, 0, width, height)
-    gradient.addColorStop(0, '#f3f4f6')
-    gradient.addColorStop(1, '#e5e7eb')
+    gradient.addColorStop(0, "#f3f4f6")
+    gradient.addColorStop(1, "#e5e7eb")
     ctx.fillStyle = gradient
     ctx.fillRect(0, 0, width, height)
   }
-  
+
   return canvas.toDataURL()
 }
