@@ -3,33 +3,34 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { HiMail, HiPhone, HiLocationMarker, HiClock, HiPaperAirplane } from "react-icons/hi"
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { GradientText } from "@/components/ui/gradient-text"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { ResponsiveContainer } from "@/components/ui/responsive-container"
 import { LoadingAnimation } from "@/components/ui/loading-animation"
+import { FaXTwitter } from "react-icons/fa6"
 
 const contactInfo = [
   {
     icon: HiMail,
     title: "Email",
-    value: "hello@anandjaiswal.dev",
-    href: "mailto:hello@anandjaiswal.dev",
+    value: "anandjaiswalprofessional@gmail.com",
+    href: "mailto:anandjaiswalprofessional@gmail.com",
     color: "text-blue-500",
   },
   {
     icon: HiPhone,
     title: "Phone",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
+    value: "+91 8081143378",
+    href: "tel:+918081143378",
     color: "text-green-500",
   },
   {
     icon: HiLocationMarker,
     title: "Location",
-    value: "Delhi, India",
-    href: "https://maps.google.com/?q=Delhi,India",
+    value: "Uttar Pradesh, India",
+    href: "https://maps.app.goo.gl/2bdnhKoTzuJszPew6",
     color: "text-red-500",
   },
   {
@@ -43,27 +44,18 @@ const contactInfo = [
 const socialLinks = [
   {
     icon: FaGithub,
-    href: "https://github.com/anandjaiswal",
+    href: "https://github.com/anand-jaiswal-IN",
     label: "GitHub",
-    color: "hover:text-gray-900",
   },
   {
     icon: FaLinkedin,
-    href: "https://linkedin.com/in/anandjaiswal",
+    href: "https://www.linkedin.com/in/anand-jaiswal-810042233/",
     label: "LinkedIn",
-    color: "hover:text-blue-600",
   },
   {
-    icon: FaTwitter,
-    href: "https://twitter.com/anandjaiswal",
-    label: "Twitter",
-    color: "hover:text-blue-400",
-  },
-  {
-    icon: FaInstagram,
-    href: "https://instagram.com/anandjaiswal",
-    label: "Instagram",
-    color: "hover:text-pink-500",
+    icon: FaXTwitter,
+    href: "https://x.com/anand_jaiswal__",
+    label: "X",
   },
 ]
 
@@ -183,7 +175,7 @@ export default function ContactPage() {
                     transition={{ delay: 1 + index * 0.1, duration: 0.4 }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`p-3 glass rounded-full transition-all duration-300 ${link.color}`}
+                    className={`p-3 glass rounded-full transition-all duration-300 hover:bg-primary`}
                     title={link.label}
                   >
                     <link.icon className="w-5 h-5" />

@@ -182,6 +182,13 @@ const projects = [
 
 const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile", "AI/ML", "IoT"]
 
+const stat_numbers = [
+  { label: "Total Projects", value: projects.length },
+  { label: "Technologies Used", value: "20+" },
+  { label: "Years Experience", value: "2+" },
+  { label: "Happy Clients", value: "15+" },
+]
+
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All")
 
@@ -244,12 +251,7 @@ export default function ProjectsPage() {
           viewport={{ once: true }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
-          {[
-            { label: "Total Projects", value: projects.length },
-            { label: "Technologies Used", value: "20+" },
-            { label: "Years Experience", value: "3+" },
-            { label: "Happy Clients", value: "15+" },
-          ].map(stat => (
+          {stat_numbers.map(stat => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
               <div className="text-foreground-muted text-sm">{stat.label}</div>

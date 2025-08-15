@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { HiArrowDown, HiDownload } from "react-icons/hi"
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { GradientText } from "@/components/ui/gradient-text"
 
@@ -11,9 +12,14 @@ import { ParallaxSection } from "@/components/ui/parallax-section"
 
 export function HeroSection() {
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com/anandjaiswal", label: "GitHub" },
-    { icon: FaLinkedin, href: "https://linkedin.com/in/anandjaiswal", label: "LinkedIn" },
-    { icon: FaEnvelope, href: "mailto:hello@anandjaiswal.dev", label: "Email" },
+    { icon: FaGithub, href: "https://github.com/anand-jaiswal-IN", label: "GitHub" },
+    {
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/anand-jaiswal-810042233",
+      label: "LinkedIn",
+    },
+    { icon: FaXTwitter, href: "https://x.com/anand_jaiswal__", label: "X (Twitter)" },
+    { icon: FaEnvelope, href: "mailto:anandjaiswalprofessional@gmail.com", label: "Email" },
   ]
 
   return (
@@ -57,14 +63,14 @@ export function HeroSection() {
             </h1>
 
             <AnimatedText
-              text="Full Stack Developer & Creative Technologist"
+              text="Full Stack Developer & Tech Enthusiast"
               className="text-xl md:text-2xl lg:text-3xl text-foreground-secondary mb-8"
               delay={0.8}
               variant="slide"
             />
 
             <AnimatedText
-              text="I craft digital experiences that blend cutting-edge technology with beautiful design, creating solutions that not only work flawlessly but inspire and delight users."
+              text="I'm a passionate developer who thrives on transforming ideas into impactful digital solutions. With a blend of creativity, precision, and problem-solving, I craft code that not only works but inspires."
               className="text-base md:text-lg text-foreground-muted max-w-2xl mx-auto leading-relaxed"
               delay={1.2}
             />

@@ -9,33 +9,34 @@ import { Timeline } from "@/components/ui/timeline"
 import { StatsCard } from "@/components/ui/stats-card"
 import { SkillsDetailed } from "@/components/sections/skills-detailed"
 import Image from "next/image"
+import Link from "next/link"
 
 const education = [
   {
-    title: "Bachelor of Technology in Computer Science",
-    organization: "Indian Institute of Technology (IIT)",
-    location: "Delhi, India",
-    period: "2019 - 2023",
+    title: "Bachelor of Technology in Electronics and Communication Enginnering",
+    organization: "Bundelkhand Institute of Engineering and Technology",
+    location: "Jhansi, Uttar Pradesh, India",
+    period: "2023 - 2027",
     description:
-      "Graduated with First Class Honors, specializing in Software Engineering and Data Structures. Completed coursework in Advanced Algorithms, Database Systems, Machine Learning, and Web Technologies.",
+      "Currently pursuing a B.Tech degree with a focus on Electronics and Communication Engineering. Gained strong foundation in programming, data structures, algorithms, and web development.",
     achievements: [
       "Graduated with 8.5/10 CGPA",
       "Led the Web Development Club for 2 years",
-      "Won 3 hackathons during college",
-      "Published research paper on 'Optimizing React Performance'",
+      "Won 2 hackathons during college",
+      "Participated in various coding competitions, workshops and college events",
     ],
   },
   {
     title: "Higher Secondary Education",
-    organization: "Delhi Public School",
-    location: "Delhi, India",
-    period: "2017 - 2019",
+    organization: "Little Flower Children School, CBSE Board",
+    location: "Mau, Uttar Pradesh, India",
+    period: "2020 - 2022",
     description:
-      "Completed 12th grade with focus on Mathematics, Physics, and Computer Science. Achieved 95% marks and was among the top 5% of students.",
+      "Completed 12th grade with focus on Mathematics, Physics, and Chemistry. Achieved 89% marks and was among the top 10% of students.",
     achievements: [
-      "95% marks in 12th grade",
-      "School topper in Computer Science",
-      "Captain of the Programming Club",
+      "89% marks in 12th grade",
+      "Active member of the Science Club",
+      "Participated in inter-school science exhibitions",
     ],
   },
 ]
@@ -154,7 +155,7 @@ export default function AboutPage() {
 
               <div className="space-y-4 text-foreground-muted leading-relaxed">
                 <p>
-                  Hello! I&apos;m Anand Jaiswal, a passionate full-stack developer with over 3 years
+                  Hello! I&apos;m Anand Jaiswal, a passionate full-stack developer with over 2 years
                   of experience creating digital solutions that make a difference. My journey in
                   technology started during my college years when I discovered the power of code to
                   solve real-world problems.
@@ -176,23 +177,26 @@ export default function AboutPage() {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 bg-primary text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-                >
-                  <HiDownload className="w-4 h-4" />
-                  Download Resume
-                </motion.button>
-
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 glass rounded-full font-semibold hover:bg-foreground-primary/10 transition-all duration-300 flex items-center gap-2"
-                >
-                  <HiMail className="w-4 h-4" />
-                  Get In Touch
-                </motion.button>
+                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-3 bg-primary text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                  >
+                    <HiDownload className="w-4 h-4" />
+                    Download Resume
+                  </motion.button>
+                </Link>
+                <Link href="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-3 glass rounded-full font-semibold hover:bg-foreground-primary/10 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                  >
+                    <HiMail className="w-4 h-4" />
+                    Get In Touch
+                  </motion.button>
+                </Link>
               </div>
             </div>
 

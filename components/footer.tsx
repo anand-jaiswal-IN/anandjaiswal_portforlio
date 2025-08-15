@@ -4,13 +4,19 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { HiHeart, HiArrowUp } from "react-icons/hi"
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 import { GradientText } from "./ui/gradient-text"
 import { ResponsiveContainer } from "./ui/responsive-container"
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/anandjaiswal", label: "GitHub" },
-  { icon: FaLinkedin, href: "https://linkedin.com/in/anandjaiswal", label: "LinkedIn" },
-  { icon: FaEnvelope, href: "mailto:hello@anandjaiswal.dev", label: "Email" },
+  { icon: FaGithub, href: "https://github.com/anand-jaiswal-IN", label: "GitHub" },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/anand-jaiswal-810042233",
+    label: "LinkedIn",
+  },
+  { icon: FaXTwitter, href: "https://x.com/anand_jaiswal__", label: "X (Twitter)" },
+  { icon: FaEnvelope, href: "mailto:anandjaiswalprofessional@gmail.com", label: "Email" },
 ]
 
 const quickLinks = [
@@ -103,8 +109,8 @@ export function Footer() {
             >
               <h4 className="text-lg font-semibold mb-4 text-foreground-primary">Get In Touch</h4>
               <div className="space-y-2 text-foreground-muted">
-                <p>hello@anandjaiswal.dev</p>
-                <p>Delhi, India</p>
+                <p>anandjaiswalprofessional@gmail.com</p>
+                <p>Uttar Pradesh, India</p>
                 <p>Available for freelance work</p>
               </div>
             </motion.div>
@@ -120,9 +126,9 @@ export function Footer() {
           className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border"
         >
           <div className="flex items-center gap-2 text-foreground-muted text-sm mb-4 md:mb-0">
-            <span>© 2024 Anand Jaiswal. Made with</span>
+            <span>© {new Date().getFullYear()} Anand Jaiswal. Made with</span>
             <HiHeart className="w-4 h-4 text-red-500 animate-pulse" />
-            <span>and lots of coffee</span>
+            <span>and lots of tea</span>
           </div>
 
           {/* Back to Top */}

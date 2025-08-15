@@ -6,11 +6,13 @@ import {
   HiCode,
   HiColorSwatch,
   HiDatabase,
-  HiDeviceMobile,
+  HiServer,
   HiGlobeAlt,
   HiLightningBolt,
   HiArrowRight,
+  HiChip,
 } from "react-icons/hi"
+import { FaTools } from "react-icons/fa"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
 
@@ -23,23 +25,23 @@ const skills = [
     delay: 0,
   },
   {
-    icon: HiDatabase,
+    icon: HiServer,
     title: "Backend Development",
-    description: "Node.js, Python, PostgreSQL, MongoDB",
-    color: "text-green-500",
+    description: "Node.js - Express, Python - Django, FastAPI",
+    color: "text-red-500",
     delay: 0.1,
   },
   {
-    icon: HiDeviceMobile,
-    title: "Mobile Development",
-    description: "React Native, Flutter, iOS, Android",
-    color: "text-purple-500",
+    icon: HiDatabase,
+    title: "Database & ORM/ODM",
+    description: "Postgresql, MySQL, SQLite, MongoDB, Prisma, SQLAlchemy, Drizzle, Mongoose, Redis",
+    color: "text-green-500",
     delay: 0.2,
   },
   {
     icon: HiColorSwatch,
     title: "UI/UX Design",
-    description: "Figma, Adobe XD, Design Systems",
+    description: "Figma, Photoshop, Adobe XD, Design Systems",
     color: "text-pink-500",
     delay: 0.3,
   },
@@ -56,6 +58,20 @@ const skills = [
     description: "Optimization, SEO, Accessibility",
     color: "text-yellow-500",
     delay: 0.5,
+  },
+  {
+    icon: FaTools,
+    title: "Tools & DevOps",
+    description: "Docker, CI/CD, Git, Linux, Methodologies, AWS(Basic), Vercel, Netlify",
+    color: "text-indigo-500",
+    delay: 0.6,
+  },
+  {
+    icon: HiChip,
+    title: "AI & Machine Learning",
+    description: "Prompt Engineering, Language Models, LangChain",
+    color: "text-teal-500",
+    delay: 0.7,
   },
 ]
 
