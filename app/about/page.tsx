@@ -8,6 +8,7 @@ import { AnimatedText } from "@/components/ui/animated-text"
 import { Timeline } from "@/components/ui/timeline"
 import { StatsCard } from "@/components/ui/stats-card"
 import { SkillsDetailed } from "@/components/sections/skills-detailed"
+import Image from "next/image"
 
 const education = [
   {
@@ -205,7 +206,7 @@ export default function AboutPage() {
               >
                 {/* Profile Image Placeholder */}
                 <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-6xl font-bold text-primary/50 glass">
-                  AJ
+                  <Image src="/my_img.png" fill={true} alt="my_image" />
                 </div>
 
                 {/* Floating elements */}
