@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { HiHome, HiUser, HiBriefcase, HiBookOpen, HiMenu, HiX, HiMail } from "react-icons/hi"
@@ -55,7 +56,16 @@ export function Navigation() {
         transition={{ duration: 0.5 }}
         className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 hidden md:block"
       >
-        <div className="flex items-center gap-2 px-6 py-3 rounded-full glass-strong">
+        <div className="flex items-center gap-4 px-6 py-3 rounded-full glass-strong">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Anand Jaiswal Logo"
+              width={28}
+              height={28}
+              className="w-7 h-7 object-contain"
+            />
+          </Link>
           <div className="flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = pathname === item.href
@@ -97,8 +107,14 @@ export function Navigation() {
         className="fixed top-4 left-4 right-4 z-50 md:hidden"
       >
         <div className="flex items-center justify-between px-4 py-3 rounded-2xl glass-strong">
-          <Link href="/" className="text-xl font-bold text-primary">
-            AJ
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Anand Jaiswal Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain"
+            />
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
