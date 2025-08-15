@@ -5,6 +5,12 @@ import Link from "next/link"
 import { getPostBySlug, getAllPostSlugs } from "@/lib/blog"
 import { formatDate } from "@/lib/utils"
 import { GradientText } from "@/components/ui/gradient-text"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Blog Post",
+  description: "Detailed insights and discussions on web development topics.",
+}
 
 interface BlogPostPageProps {
   params: Promise<{

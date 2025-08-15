@@ -1,6 +1,13 @@
 import { getAllPosts, getFeaturedPosts, getAllTags } from "@/lib/blog"
 import { BlogCard } from "@/components/ui/blog-card"
 import { GradientText } from "@/components/ui/gradient-text"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Blog & Insights",
+  description:
+    "Thoughts, tutorials, and insights about web development, technology trends, and my journey as a developer.",
+}
 
 export default async function BlogPage() {
   const [allPosts, featuredPosts, allTags] = await Promise.all([

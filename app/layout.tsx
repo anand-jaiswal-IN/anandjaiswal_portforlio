@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Anand Jaiswal - Full Stack Developer",
+  title: "Anand Jaiswal - Portfolio",
   description:
     "Creative full-stack developer specializing in modern web technologies, UI/UX design, and innovative digital solutions.",
   keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Web Development", "UI/UX"],
