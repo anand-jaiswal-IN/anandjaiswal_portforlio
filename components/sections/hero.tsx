@@ -11,15 +11,30 @@ import { MagneticButton } from "@/components/ui/magnetic-button"
 import { ParallaxSection } from "@/components/ui/parallax-section"
 
 export function HeroSection() {
+  const tagline = "Full Stack Developer, AI Engineer & Tech Enthusiast";
+  const description = "Crafting seamless digital experiences with code. I specialize in building robust web applications and exploring the frontiers of AI. Let's create something amazing together!";
+  const resumeLink = "/resume.pdf";
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com/anand-jaiswal-IN", label: "GitHub" },
+    { 
+      icon: FaGithub, 
+      href: "https://github.com/anand-jaiswal-IN", 
+      label: "GitHub" 
+    },
     {
       icon: FaLinkedin,
       href: "https://www.linkedin.com/in/anand-jaiswal-810042233",
       label: "LinkedIn",
     },
-    { icon: FaXTwitter, href: "https://x.com/anand_jaiswal__", label: "X (Twitter)" },
-    { icon: FaEnvelope, href: "mailto:anandjaiswalprofessional@gmail.com", label: "Email" },
+    { 
+      icon: FaXTwitter, 
+      href: "https://x.com/anand_jaiswal__", 
+      label: "X (Twitter)" 
+    },
+    { 
+      icon: FaEnvelope, 
+      href: "mailto:anandjaiswalprofessional@gmail.com", 
+      label: "Email" 
+    },
   ]
 
   return (
@@ -44,7 +59,7 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 py-20 flex items-center justify-center min-h-screen">
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center text-left">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-left">
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -63,14 +78,14 @@ export function HeroSection() {
             </h1>
 
             <AnimatedText
-              text="Full Stack Developer & Tech Enthusiast"
+              text={tagline}
               className="text-xl md:text-2xl lg:text-3xl text-foreground-secondary mb-8"
               delay={0.8}
               variant="slide"
             />
 
             <AnimatedText
-              text="I'm a passionate developer who thrives on transforming ideas into impactful digital solutions. With a blend of creativity, precision, and problem-solving, I craft code that not only works but inspires."
+              text={description}
               className="text-base md:text-lg text-foreground-muted max-w-2xl mx-auto leading-relaxed"
               delay={1.2}
             />
@@ -99,6 +114,7 @@ export function HeroSection() {
               <MagneticButton
                 className="w-full sm:w-auto min-w-[200px] bg-transparent glass border-2 border-primary/20 text-foreground-primary hover:bg-primary hover:text-white flex items-center gap-2 justify-center group"
                 strength={0.2}
+                onClick={() => window.open(resumeLink, "_blank")}
               >
                 <HiDownload className="w-4 h-4" />
                 Download Resume

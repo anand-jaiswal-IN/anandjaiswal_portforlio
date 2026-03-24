@@ -59,6 +59,25 @@ const socialLinks = [
   },
 ]
 
+const frequentQuestions = [
+  {
+    question: "What's your typical response time?",
+    answer: "I usually respond within 24 hours, often much sooner during business hours.",
+  },
+  {
+    question: "Do you work on weekends?",
+    answer: "I'm flexible with timing and can accommodate urgent projects when needed.",
+  },
+  {
+    question: "What types of projects do you take on?",
+    answer: "I work on web applications, mobile apps, APIs, and full-stack solutions of all sizes.",
+  },
+  {
+    question: "Do you offer ongoing support?",
+    answer: "Yes! I provide maintenance and support packages for all projects I develop.",
+  },
+]
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -330,27 +349,7 @@ export default function ContactPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                question: "What's your typical response time?",
-                answer:
-                  "I usually respond within 24 hours, often much sooner during business hours.",
-              },
-              {
-                question: "Do you work on weekends?",
-                answer: "I'm flexible with timing and can accommodate urgent projects when needed.",
-              },
-              {
-                question: "What types of projects do you take on?",
-                answer:
-                  "I work on web applications, mobile apps, APIs, and full-stack solutions of all sizes.",
-              },
-              {
-                question: "Do you offer ongoing support?",
-                answer:
-                  "Yes! I provide maintenance and support packages for all projects I develop.",
-              },
-            ].map((faq, index) => (
+            {frequentQuestions.map((faq, index) => (
               <FloatingCard
                 key={index}
                 delay={index * 0.1}

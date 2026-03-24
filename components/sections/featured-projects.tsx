@@ -6,36 +6,45 @@ import { HiExternalLink, HiArrowRight } from "react-icons/hi"
 import { FaGithub } from "react-icons/fa"
 import { FloatingCard } from "@/components/ui/floating-card"
 import { GradientText } from "@/components/ui/gradient-text"
+import Image from "next/image"
 
 const featuredProjects = [
   {
-    title: "E-Commerce Platform",
+    title: "Anonymous Messaging App",
     description:
-      "A modern, full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-    github: "https://github.com/anandjaiswal/ecommerce",
-    live: "https://ecommerce-demo.anandjaiswal.dev",
+      "A modern, full-stack anonymous messaging application that allows users to send and receive anonymous messages.",
+    imageUrl: "/featured_projects/1.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Mongoose",
+      "Docker",
+    ],
+    github: "https://github.com/anand-jaiswal-IN/anonymous-message-app",
+    live: "https://anonymous-message-app-lake.vercel.app/",
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Restaurant Lookup",
     description:
-      "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
-    image: "/api/placeholder/600/400",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    github: "https://github.com/anandjaiswal/taskmanager",
-    live: "https://tasks.anandjaiswal.dev",
+      "Django project created for learning and exploration purposes. It focuses on restaurant management and allows you to model various aspects like cities, restaurants, food categories, dishes, and user ratings for both restaurants and dishes.",
+    imageUrl: "/featured_projects/2.png",
+    technologies: ["Django", "PostgreSQL", "Django ORM", "JavaScript", "Docker"],
+    github: "https://github.com/anand-jaiswal-IN/restaurantlookup",
+    live: "https://restaurantlookup.onrender.com/",
     featured: true,
   },
   {
-    title: "AI Content Generator",
+    title: "Fullstack Fastapi",
     description:
-      "AI-powered content creation platform with multiple templates, SEO optimization, and team collaboration.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Next.js", "OpenAI", "Prisma", "Tailwind"],
-    github: "https://github.com/anandjaiswal/ai-content",
-    live: "https://content.anandjaiswal.dev",
+      "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
+    imageUrl: "/featured_projects/3.png",
+    technologies: ["FastAPI", "SQLModel", "React", "Docker Compose"],
+    github: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
+    live: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
     featured: true,
   },
 ]
@@ -79,12 +88,13 @@ export function FeaturedProjects() {
                 {/* Project Image */}
                 <div className="relative mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
                   <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                    <div className="text-4xl font-bold text-primary/50">
-                      {project.title
-                        .split(" ")
-                        .map(word => word[0])
-                        .join("")}
-                    </div>
+                    <Image
+                    width={200}
+                    height={200}
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
 
                   {/* Overlay on hover */}

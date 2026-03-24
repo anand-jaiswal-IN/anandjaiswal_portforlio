@@ -1,13 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { HiDownload, HiMail, HiCode, HiUsers } from "react-icons/hi"
-import { FaCoffee, FaTrophy } from "react-icons/fa"
+import { HiDownload, HiMail } from "react-icons/hi"
 import { GradientText } from "@/components/ui/gradient-text"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { Timeline } from "@/components/ui/timeline"
-import { StatsCard } from "@/components/ui/stats-card"
-import { SkillsDetailed } from "@/components/sections/skills-detailed"
+// import { SkillsDetailed } from "@/components/sections/skills-detailed"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -43,77 +41,19 @@ const education = [
 
 const experience = [
   {
-    title: "Senior Full Stack Developer",
-    organization: "TechCorp Solutions",
+    title: "Full Stack Developer Intern",
+    organization: "DevXAlpha - A leading web agency specializing in custom software solutions for clients worldwide",
     location: "Remote",
-    period: "2023 - Present",
-    current: true,
+    period: "June 2025 - July 2025",
+    current: false,
     description:
       "Leading development of enterprise web applications using React, Next.js, and Node.js. Managing a team of 4 developers and collaborating with cross-functional teams to deliver high-quality software solutions.",
     achievements: [
       "Increased application performance by 40%",
-      "Led migration to microservices architecture",
-      "Mentored 3 junior developers",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Created the carriers page for the company website using Next.js and Tailwind CSS",
+      "Worked with 2 developers",
+      "Deployed 3 major projects to production with zero downtime",
     ],
-  },
-  {
-    title: "Full Stack Developer",
-    organization: "StartupXYZ",
-    location: "Bangalore, India",
-    period: "2022 - 2023",
-    description:
-      "Developed and maintained multiple client projects using modern web technologies. Worked closely with designers and product managers to create user-friendly applications.",
-    achievements: [
-      "Built 5+ production applications",
-      "Reduced loading times by 50%",
-      "Implemented responsive designs for mobile-first approach",
-      "Integrated third-party APIs and payment gateways",
-    ],
-  },
-  {
-    title: "Frontend Developer Intern",
-    organization: "WebDev Agency",
-    location: "Delhi, India",
-    period: "2021 - 2022",
-    description:
-      "Gained hands-on experience in frontend development, working on various client projects and learning industry best practices.",
-    achievements: [
-      "Converted 10+ Figma designs to responsive websites",
-      "Learned React, TypeScript, and modern CSS frameworks",
-      "Collaborated with senior developers on code reviews",
-    ],
-  },
-]
-
-const stats = [
-  {
-    icon: HiCode,
-    value: "50+",
-    label: "Projects Completed",
-    description: "From small websites to enterprise applications",
-    color: "text-blue-500",
-  },
-  {
-    icon: HiUsers,
-    value: "25+",
-    label: "Happy Clients",
-    description: "Satisfied clients across different industries",
-    color: "text-green-500",
-  },
-  {
-    icon: FaTrophy,
-    value: "5+",
-    label: "Awards Won",
-    description: "Recognition for outstanding work and innovation",
-    color: "text-purple-500",
-  },
-  {
-    icon: FaCoffee,
-    value: "1000+",
-    label: "Cups of Coffee",
-    description: "Fuel for late-night coding sessions",
-    color: "text-orange-500",
   },
 ]
 
@@ -224,25 +164,6 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            <GradientText gradient="rainbow">By the Numbers</GradientText>
-          </h2>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <StatsCard key={stat.label} {...stat} delay={index * 0.1} />
-            ))}
-          </div>
-        </motion.div>
-
         {/* Experience Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -274,9 +195,9 @@ export default function AboutPage() {
         </motion.div>
 
         {/* Skills Section */}
-        <div id="skills">
+        {/* <div id="skills">
           <SkillsDetailed />
-        </div>
+        </div> */}
       </div>
     </div>
   )

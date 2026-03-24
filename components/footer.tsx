@@ -30,6 +30,7 @@ export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
+  const description = "Full-stack developer passionate about creating exceptional digital experiences. Let's build something amazing together."
 
   return (
     <footer className="relative bg-background-secondary/30 border-t border-border">
@@ -47,8 +48,7 @@ export function Footer() {
                 <GradientText gradient="primary">Anand Jaiswal</GradientText>
               </h3>
               <p className="text-foreground-muted mb-6 max-w-md leading-relaxed">
-                Full-stack developer passionate about creating exceptional digital experiences.
-                Let's build something amazing together.
+                {description}
               </p>
 
               {/* Social Links */}

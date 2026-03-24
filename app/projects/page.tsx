@@ -9,185 +9,116 @@ import { AnimatedText } from "@/components/ui/animated-text"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Anonymous Messaging App",
     description:
-      "A modern, full-stack e-commerce solution with real-time inventory, payment processing, and comprehensive admin dashboard.",
-    longDescription:
-      "Built with Next.js and TypeScript, this platform features advanced product management, secure payment processing with Stripe, real-time inventory tracking, and a powerful admin dashboard. The application includes user authentication, order management, and detailed analytics.",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS", "Prisma"],
-    github: "https://github.com/anandjaiswal/ecommerce",
-    live: "https://ecommerce-demo.anandjaiswal.dev",
-    date: "2024",
+      "A modern, full-stack anonymous messaging application that allows users to send and receive anonymous messages.",
+    image: "/projects/anonymous_messaging_app.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Mongoose",
+      "Docker",
+    ],
+    github: "https://github.com/anand-jaiswal-IN/anonymous-message-app",
+    live: "https://anonymous-message-app-lake.vercel.app/",
+    date: "2025",
     category: "Full Stack",
     featured: true,
   },
   {
-    title: "AI Content Generator",
+    title: "Restaurant Lookup",
     description:
-      "AI-powered content creation platform with multiple templates, SEO optimization, and team collaboration features.",
-    longDescription:
-      "Leveraging OpenAI's GPT models, this platform helps users generate high-quality content for various purposes. Features include template management, SEO optimization, content scheduling, and team collaboration tools.",
-    technologies: ["Next.js", "OpenAI API", "Prisma", "Tailwind CSS", "Vercel AI SDK"],
-    github: "https://github.com/anandjaiswal/ai-content",
-    live: "https://content.anandjaiswal.dev",
-    date: "2024",
-    category: "AI/ML",
-    featured: true,
-  },
-  {
-    title: "Task Management App",
-    description:
-      "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
-    longDescription:
-      "A comprehensive project management solution featuring real-time collaboration, task assignment, progress tracking, and team analytics. Built with modern web technologies for optimal performance and user experience.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "JWT"],
-    github: "https://github.com/anandjaiswal/taskmanager",
-    live: "https://tasks.anandjaiswal.dev",
-    date: "2024",
+      "Django project created for learning and exploration purposes. It focuses on restaurant management and allows you to model various aspects like cities, restaurants, food categories, dishes, and user ratings for both restaurants and dishes.",
+    image: "/projects/restaurant_lookup.png",
+    technologies: ["Django", "PostgreSQL", "Django ORM", "JavaScript", "Docker"],
+    github: "https://github.com/anand-jaiswal-IN/restaurantlookup",
+    live: "https://restaurantlookup.onrender.com/",
+    date: "2025",
     category: "Full Stack",
     featured: true,
   },
   {
-    title: "Social Media Dashboard",
+    title: "Fullstack Fastapi",
     description:
-      "Comprehensive social media management platform with analytics, scheduling, and multi-platform integration.",
-    longDescription:
-      "A powerful dashboard for managing multiple social media accounts with features like post scheduling, engagement analytics, content calendar, and automated reporting. Supports Instagram, Twitter, Facebook, and LinkedIn.",
-    technologies: ["React", "Node.js", "Redis", "PostgreSQL", "Chart.js", "Social APIs"],
-    github: "https://github.com/anandjaiswal/social-dashboard",
-    live: "https://social.anandjaiswal.dev",
+      "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
+    image: "/projects/fullstack_fastapi.png",
+    technologies: ["FastAPI", "SQLModel", "React", "Docker Compose"],
+    github: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
+    live: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
+    date: "2025",
+    category: "Full Stack",
+    featured: true,
+  },
+
+  {
+    title: "Todo App with Express and MongoDB",
+    description:
+      "Full stack, simple todo web application. Using Express.js, Node.js, MongoDB, and Mongoose. Can create user accounts, add, edit, and delete todo items. A great project for learning the basics of backend development with Express and MongoDB.",
+    image: "/projects/todo_app_express_mongodb.png",
+    technologies: ["Express.js", "Node.js", "MongoDB", "Mongoose"],
+    github: "https://github.com/anand-jaiswal-IN/todo-express-app",
+    live: "https://github.com/anand-jaiswal-IN/todo-express-app",
     date: "2024",
     category: "Full Stack",
+    featured: false,
   },
+
   {
-    title: "Real Estate Platform",
-    description:
-      "Modern real estate marketplace with property listings, virtual tours, and mortgage calculator.",
-    longDescription:
-      "A comprehensive real estate platform featuring property search, virtual 3D tours, mortgage calculations, agent profiles, and advanced filtering. Includes both buyer and seller dashboards with real-time notifications.",
-    technologies: ["Next.js", "Three.js", "Mapbox", "Stripe", "PostgreSQL", "AWS S3"],
-    github: "https://github.com/anandjaiswal/realestate",
-    live: "https://realestate.anandjaiswal.dev",
-    date: "2024",
-    category: "Full Stack",
-  },
-  {
-    title: "Learning Management System",
-    description:
-      "Educational platform with course creation, progress tracking, and interactive learning tools.",
-    longDescription:
-      "A complete LMS solution for educators and students with features like course creation, video streaming, quizzes, assignments, progress tracking, and certification generation. Includes payment integration for course purchases.",
-    technologies: ["Next.js", "Node.js", "MongoDB", "AWS", "Stripe", "Socket.io"],
-    github: "https://github.com/anandjaiswal/lms",
-    live: "https://learn.anandjaiswal.dev",
-    date: "2024",
-    category: "Full Stack",
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "Beautiful weather application with detailed forecasts, interactive maps, and location-based services.",
-    technologies: ["React", "Weather API", "Chart.js", "Geolocation API", "PWA"],
-    github: "https://github.com/anandjaiswal/weather-app",
-    live: "https://weather.anandjaiswal.dev",
-    date: "2023",
+    title: "Music Academy",
+    description: "Music academy template website developed in Next.js and Acertinity UI.",
+    image: "/projects/music_academy.png",
+    technologies: ["Next.js", "Tailwind CSS", "Acertinity UI", "TypeScript"],
+    github: "https://github.com/anand-jaiswal-IN/music-academy",
+    live: "https://github.com/anand-jaiswal-IN/music-academy",
+    date: "2025",
     category: "Frontend",
+    featured: false,
   },
+
   {
-    title: "Crypto Portfolio Tracker",
+    title: "Booking Dot Com Clone",
     description:
-      "Real-time cryptocurrency portfolio tracking with advanced analytics and price alerts.",
-    technologies: ["Vue.js", "CoinGecko API", "Chart.js", "Firebase", "PWA"],
-    github: "https://github.com/anandjaiswal/crypto-tracker",
-    live: "https://crypto.anandjaiswal.dev",
-    date: "2023",
+      "A clone of the popular travel booking website Booking.com, built using Next.js and Tailwind CSS. It features a responsive design and allows users to search for hotels, view details, and make bookings.",
+    image: "/projects/booking_dot_com_website.png",
+    technologies: ["Vite", "React", "Tailwind CSS", "Javascript"],
+    github: "https://github.com/anand-jaiswal-IN/booking.com-website",
+    live: "https://github.com/anand-jaiswal-IN/booking.com-website",
+    date: "2024",
     category: "Frontend",
+    featured: false,
   },
+
   {
-    title: "Music Streaming App",
+    title: "User Service API",
     description:
-      "Spotify-like music streaming application with playlists, recommendations, and social features.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS S3", "Stripe", "Socket.io"],
-    github: "https://github.com/anandjaiswal/music-app",
-    live: "https://music.anandjaiswal.dev",
-    date: "2023",
-    category: "Full Stack",
-  },
-  {
-    title: "Blog CMS",
-    description:
-      "Headless content management system for blogs with markdown support and SEO optimization.",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Multer", "Redis"],
-    github: "https://github.com/anandjaiswal/blog-cms",
-    date: "2023",
+      "A RESTful API built with FastAPI that provides user management functionalities, including user registration, authentication, management with Google OAuth, email services, and profile management. It uses SQLModel for database interactions and JWT for secure authentication.",
+    image: "/projects/user_service_api.png",
+    technologies: ["FastAPI", "SQLModel", "Docker"],
+    github: "https://github.com/anand-jaiswal-IN/user_service",
+    live: "https://github.com/anand-jaiswal-IN/user_service",
+    date: "2025",
     category: "Backend",
+    featured: false,
   },
+
   {
-    title: "API Gateway Service",
+    title: "User Registration System",
     description:
-      "Microservices API gateway with rate limiting, authentication, and load balancing.",
-    technologies: ["Node.js", "Express", "Redis", "Docker", "Nginx", "JWT"],
-    github: "https://github.com/anandjaiswal/api-gateway",
-    date: "2023",
+      "This is an Express.js Node.js server implementing a User Registration System with MongoDB as the database service and Mongoose as the ODM (Object Data Mapper). The system provides endpoints for user registration, login, and profile management. It includes features such as password hashing for security, JWT (JSON Web Token) for authentication, and input validation to ensure data integrity.",
+    image: "/projects/user_registration_system.png",
+    technologies: ["Express.js", "Node.js", "MongoDB", "Mongoose", "Nodemailer", "JWT"],
+    github: "https://github.com/anand-jaiswal-IN/user-registration-api",
+    live: "https://github.com/anand-jaiswal-IN/user-registration-api",
+    date: "2025",
     category: "Backend",
-  },
-  {
-    title: "Chat Application",
-    description:
-      "Real-time messaging application with group chats, file sharing, and emoji support.",
-    technologies: ["React", "Socket.io", "Node.js", "MongoDB", "AWS S3"],
-    github: "https://github.com/anandjaiswal/chat-app",
-    live: "https://chat.anandjaiswal.dev",
-    date: "2023",
-    category: "Full Stack",
-  },
-  {
-    title: "Recipe Finder",
-    description:
-      "Mobile-first recipe discovery app with ingredient-based search and meal planning.",
-    technologies: ["React Native", "Expo", "Recipe API", "AsyncStorage", "Firebase"],
-    github: "https://github.com/anandjaiswal/recipe-finder",
-    date: "2023",
-    category: "Mobile",
-  },
-  {
-    title: "Expense Tracker",
-    description:
-      "Personal finance management app with budget tracking, expense categorization, and financial insights.",
-    technologies: ["Flutter", "Firebase", "Chart.js", "SQLite", "Dart"],
-    github: "https://github.com/anandjaiswal/expense-tracker",
-    date: "2023",
-    category: "Mobile",
-  },
-  {
-    title: "Fitness Tracker",
-    description:
-      "Comprehensive fitness app with workout tracking, nutrition logging, and progress analytics.",
-    technologies: ["React Native", "Firebase", "HealthKit", "Google Fit", "Chart.js"],
-    github: "https://github.com/anandjaiswal/fitness-tracker",
-    date: "2023",
-    category: "Mobile",
-  },
-  {
-    title: "Smart Home Dashboard",
-    description:
-      "IoT dashboard for controlling smart home devices with real-time monitoring and automation.",
-    technologies: ["React", "MQTT", "Node.js", "InfluxDB", "Grafana", "Arduino"],
-    github: "https://github.com/anandjaiswal/smart-home",
-    live: "https://smarthome.anandjaiswal.dev",
-    date: "2023",
-    category: "IoT",
+    featured: false,
   },
 ]
 
-const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile", "AI/ML", "IoT"]
-
-const stat_numbers = [
-  { label: "Total Projects", value: projects.length },
-  { label: "Technologies Used", value: "20+" },
-  { label: "Years Experience", value: "2+" },
-  { label: "Happy Clients", value: "15+" },
-]
+const categories = ["All", "Full Stack", "Frontend", "Backend", "AI Engineering/ML"]
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -250,14 +181,7 @@ export default function ProjectsPage() {
           transition={{ delay: 0.5, duration: 0.8 }}
           viewport={{ once: true }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
-          {stat_numbers.map(stat => (
-            <div key={stat.label} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
-              <div className="text-foreground-muted text-sm">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
+        ></motion.div>
       </div>
     </div>
   )

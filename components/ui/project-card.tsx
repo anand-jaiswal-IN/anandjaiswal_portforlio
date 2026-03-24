@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 import { HiExternalLink, HiCalendar, HiTag } from "react-icons/hi"
 import { FaGithub } from "react-icons/fa"
 import { FloatingCard } from "./floating-card"
+import Image from "next/image"
 
 interface ProjectCardProps {
   title: string
   description: string
-  longDescription?: string
   image?: string
   technologies: string[]
   github?: string
@@ -22,7 +22,6 @@ interface ProjectCardProps {
 export function ProjectCard({
   title,
   description,
-  longDescription,
   image,
   technologies,
   github,
@@ -60,7 +59,7 @@ export function ProjectCard({
         <div className="relative mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
           <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
             {image ? (
-              <img src={image} alt={title} className="w-full h-full object-cover" />
+              <Image width={200} height={200} src={image} alt={title} className="w-full h-full object-cover" />
             ) : (
               <div className="text-4xl font-bold text-primary/50">
                 {title
