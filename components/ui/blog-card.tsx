@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { HiCalendar, HiClock, HiUser, HiTag, HiArrowRight } from "react-icons/hi"
 import { FloatingCard } from "./floating-card"
@@ -52,7 +53,7 @@ export function BlogCard({
         <div className="relative mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
           <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
             {image ? (
-              <img src={image} alt={title} className="w-full h-full object-cover" />
+              <Image src={image} alt={title} width={640} height={360} unoptimized className="w-full h-full object-cover" />
             ) : (
               <div className="text-4xl font-bold text-primary/50">
                 {title
