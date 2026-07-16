@@ -1,13 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { ProjectCard } from "@/components/ui/project-card"
-import { ProjectFilter } from "@/components/ui/project-filter"
-import { GradientText } from "@/components/ui/gradient-text"
-import { AnimatedText } from "@/components/ui/animated-text"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ProjectCard } from "@/components/ui/project-card";
+import { ProjectFilter } from "@/components/ui/project-filter";
+import { GradientText } from "@/components/ui/gradient-text";
+import { AnimatedText } from "@/components/ui/animated-text";
 
 const projects = [
+  {
+    title: "Live Quiz - Real-Time Quiz Platform",
+    description:
+      "Engineered a real-time quiz platform enabling hosts to conduct live quizzes with synchronized question delivery, live leaderboards, and concurrent participant interactions using Socket.io.",
+    image: "/projects/livequizapp.png",
+    technologies: [
+      "Next.js",
+      "Express js",
+      "Socket.io",
+      "Redis",
+      "MongoDB",
+      "Caddy",
+      "Docker",
+    ],
+    github: "https://github.com/anand-jaiswal-IN/livequiz",
+    live: "https://livequiz.anandjaiswal.dev/",
+    date: "2026",
+    category: "Full Stack",
+    featured: true,
+  },
   {
     title: "Anonymous Messaging App",
     description:
@@ -33,7 +53,13 @@ const projects = [
     description:
       "Django project created for learning and exploration purposes. It focuses on restaurant management and allows you to model various aspects like cities, restaurants, food categories, dishes, and user ratings for both restaurants and dishes.",
     image: "/projects/restaurant_lookup.png",
-    technologies: ["Django", "PostgreSQL", "Django ORM", "JavaScript", "Docker"],
+    technologies: [
+      "Django",
+      "PostgreSQL",
+      "Django ORM",
+      "JavaScript",
+      "Docker",
+    ],
     github: "https://github.com/anand-jaiswal-IN/restaurantlookup",
     live: "https://restaurantlookup.onrender.com/",
     date: "2025",
@@ -68,7 +94,8 @@ const projects = [
 
   {
     title: "Music Academy",
-    description: "Music academy template website developed in Next.js and Acertinity UI.",
+    description:
+      "Music academy template website developed in Next.js and Acertinity UI.",
     image: "/projects/music_academy.png",
     technologies: ["Next.js", "Tailwind CSS", "Acertinity UI", "TypeScript"],
     github: "https://github.com/anand-jaiswal-IN/music-academy",
@@ -109,24 +136,37 @@ const projects = [
     description:
       "This is an Express.js Node.js server implementing a User Registration System with MongoDB as the database service and Mongoose as the ODM (Object Data Mapper). The system provides endpoints for user registration, login, and profile management. It includes features such as password hashing for security, JWT (JSON Web Token) for authentication, and input validation to ensure data integrity.",
     image: "/projects/user_registration_system.png",
-    technologies: ["Express.js", "Node.js", "MongoDB", "Mongoose", "Nodemailer", "JWT"],
+    technologies: [
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Mongoose",
+      "Nodemailer",
+      "JWT",
+    ],
     github: "https://github.com/anand-jaiswal-IN/user-registration-api",
     live: "https://github.com/anand-jaiswal-IN/user-registration-api",
     date: "2025",
     category: "Backend",
     featured: false,
   },
-]
+];
 
-const categories = ["All", "Full Stack", "Frontend", "Backend", "AI Engineering/ML"]
+const categories = [
+  "All",
+  "Full Stack",
+  "Frontend",
+  "Backend",
+  "AI Engineering/ML",
+];
 
 export default function ProjectsPage() {
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter(project => project.category === activeCategory)
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <div className="min-h-screen py-20 px-4">
@@ -157,7 +197,10 @@ export default function ProjectsPage() {
         />
 
         {/* Projects Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+        >
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.title} {...project} delay={index * 0.1} />
           ))}
@@ -170,7 +213,9 @@ export default function ProjectsPage() {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <p className="text-xl text-foreground-muted">No projects found in this category.</p>
+            <p className="text-xl text-foreground-muted">
+              No projects found in this category.
+            </p>
           </motion.div>
         )}
 
@@ -184,5 +229,5 @@ export default function ProjectsPage() {
         ></motion.div>
       </div>
     </div>
-  )
+  );
 }
