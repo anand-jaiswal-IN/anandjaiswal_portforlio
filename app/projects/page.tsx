@@ -76,7 +76,7 @@ const projects = [
     live: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
     date: "2025",
     category: "Full Stack",
-    featured: true,
+    featured: false,
   },
 
   {

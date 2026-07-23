@@ -10,6 +10,16 @@ import Image from "next/image"
 
 const featuredProjects = [
   {
+    title: "Live Quiz - Real-Time Quiz Platform",
+    description:
+      "Engineered a real-time quiz platform enabling hosts to conduct live quizzes with synchronized question delivery, live leaderboards, and concurrent participant interactions using Socket.io.",
+    imageUrl: "/featured_projects/3.png",
+    technologies: ["Next.js", "Express js", "Socket.io", "Redis", "MongoDB", "Caddy", "Docker"],
+    github: "https://github.com/anand-jaiswal-IN/livequiz",
+    live: "https://livequiz.anandjaiswal.dev/",
+    featured: true,
+  },
+  {
     title: "Anonymous Messaging App",
     description:
       "A modern, full-stack anonymous messaging application that allows users to send and receive anonymous messages.",
@@ -35,16 +45,6 @@ const featuredProjects = [
     technologies: ["Django", "PostgreSQL", "Django ORM", "JavaScript", "Docker"],
     github: "https://github.com/anand-jaiswal-IN/restaurantlookup",
     live: "https://restaurantlookup.onrender.com/",
-    featured: true,
-  },
-  {
-    title: "Fullstack Fastapi",
-    description:
-      "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
-    imageUrl: "/featured_projects/3.png",
-    technologies: ["FastAPI", "SQLModel", "React", "Docker Compose"],
-    github: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
-    live: "https://github.com/anand-jaiswal-IN/fullstack-fastapi",
     featured: true,
   },
 ]
