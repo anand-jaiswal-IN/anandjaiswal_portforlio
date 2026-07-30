@@ -44,7 +44,7 @@ const experience = [
     title: "Full Stack Developer Intern",
     organization: "DevXAlpha - A leading web agency specializing in custom software solutions for clients worldwide",
     location: "Remote",
-    period: "June 2025 - July 2025",
+    period: "July 2025 - August 2025",
     current: false,
     description:
       "Leading development of enterprise web applications using React, Next.js, and Node.js. Managing a team of 4 developers and collaborating with cross-functional teams to deliver high-quality software solutions.",

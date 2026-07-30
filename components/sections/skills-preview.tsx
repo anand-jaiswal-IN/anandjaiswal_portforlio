@@ -65,6 +65,7 @@ const mainExpertise = {
     ring: "from-red-400/40 via-red-500/10 to-transparent",
     delay: 0.1,
   },
+ 
   aiEngineering: {
     icon: HiChip,
     title: "AI Engineering",
@@ -113,10 +114,11 @@ const mainExpertise = {
     ring: "from-teal-400/40 via-teal-500/10 to-transparent",
     delay: 0.2,
   },
+  
 }
 
 export function SkillsPreview() {
-  const { problemSolving, fullStack, aiEngineering } = mainExpertise
+  const { problemSolving, fullStack } = mainExpertise
   const [profilesData, setProfilesData] = useState<CodingProfilesResponse | null>(null)
   const [loadingProfiles, setLoadingProfiles] = useState(true)
 
@@ -277,8 +279,8 @@ export function SkillsPreview() {
               </div>
             </div>
           </motion.article>
-
-          {[fullStack, aiEngineering].map(skill => (
+              
+          {[fullStack].map(skill => (
             <motion.article
               key={skill.title}
               initial={{ opacity: 0, y: 30 }}
