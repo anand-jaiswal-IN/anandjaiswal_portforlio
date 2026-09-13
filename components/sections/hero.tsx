@@ -10,10 +10,11 @@ import { GradientText } from "@/components/ui/gradient-text"
 import { MagneticButton } from "@/components/ui/magnetic-button"
 import { ParallaxSection } from "@/components/ui/parallax-section"
 
+import { resumeLink } from "@/lib/constants"
+
 export function HeroSection() {
   const tagline = "Full Stack Developer, AI Engineer & Tech Enthusiast";
   const description = "Crafting seamless digital experiences with code. I specialize in building robust web applications and exploring the frontiers of AI. Let's create something amazing together!";
-  const resumeLink = "/resume.pdf";
   const socialLinks = [
     { 
       icon: FaGithub, 
@@ -117,7 +118,7 @@ export function HeroSection() {
                 onClick={() => window.open(resumeLink, "_blank")}
               >
                 <HiDownload className="w-4 h-4" />
-                Download Resume
+                View Resume
               </MagneticButton>
             </div>
           </motion.div>

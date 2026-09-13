@@ -8,6 +8,7 @@ import { Timeline } from "@/components/ui/timeline"
 // import { SkillsDetailed } from "@/components/sections/skills-detailed"
 import Image from "next/image"
 import Link from "next/link"
+import { resumeLink } from "@/lib/constants";
 
 const education = [
   {
@@ -117,7 +118,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href={resumeLink} target="_blank" rel="noopener noreferrer">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
