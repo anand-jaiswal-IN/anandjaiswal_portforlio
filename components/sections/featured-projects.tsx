@@ -10,6 +10,26 @@ import Image from "next/image"
 
 const featuredProjects = [
   {
+    title: "ResumeIQ — AI-Powered Resume Intelligence",
+    description:
+      "Engineered a RAG-based resume intelligence system using LangChain, Google Gemini, and Qdrant, enabling semantic retrieval and context-aware candidate Q&A.",
+    imageUrl: "/featured_projects/1.png",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "Gemini API",
+      "Qdrant",
+      "React Router",
+      "TypeScript",
+      "WebSockets",
+      "Docker",
+    ],
+    github: "https://github.com/anand-jaiswal-IN/resume-iq",
+    live: "https://github.com/anand-jaiswal-IN/resume-iq",
+    featured: true,
+  },
+  {
     title: "Live Quiz - Real-Time Quiz Platform",
     description:
       "Engineered a real-time quiz platform enabling hosts to conduct live quizzes with synchronized question delivery, live leaderboards, and concurrent participant interactions using Socket.io.",
@@ -17,24 +37,6 @@ const featuredProjects = [
     technologies: ["Next.js", "Express js", "Socket.io", "Redis", "MongoDB", "Caddy", "Docker"],
     github: "https://github.com/anand-jaiswal-IN/livequiz",
     live: "https://livequiz.anandjaiswal.dev/",
-    featured: true,
-  },
-  {
-    title: "Anonymous Messaging App",
-    description:
-      "A modern, full-stack anonymous messaging application that allows users to send and receive anonymous messages.",
-    imageUrl: "/featured_projects/1.png",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "MongoDB",
-      "NextAuth.js",
-      "Tailwind CSS",
-      "Mongoose",
-      "Docker",
-    ],
-    github: "https://github.com/anand-jaiswal-IN/anonymous-message-app",
-    live: "https://anonymous-message-app-lake.vercel.app/",
     featured: true,
   },
   {
@@ -89,8 +91,8 @@ export function FeaturedProjects() {
                 <div className="relative mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
                   <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
                     <Image
-                    width={200}
-                    height={200}
+                      width={200}
+                      height={200}
                       src={project.imageUrl}
                       alt={project.title}
                       className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
